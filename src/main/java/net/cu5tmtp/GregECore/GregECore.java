@@ -1,6 +1,9 @@
 package net.cu5tmtp.GregECore;
 
 import com.mojang.logging.LogUtils;
+import net.cu5tmtp.GregECore.block.ModBlocks;
+import net.cu5tmtp.GregECore.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -18,12 +21,15 @@ import org.slf4j.Logger;
 public class GregECore
 {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "GregE-core";
+    public static final String MOD_ID = "gregecore";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public GregECore(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
