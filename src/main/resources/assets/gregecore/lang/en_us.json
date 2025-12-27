@@ -1,3 +1,7 @@
 {
-  "block.gregecore.linearaccelerator": "Linear Accelerator"
+  "block.gregecore.linearaccelerator": "Linear Accelerator",
+  "block.gregecore.conveyorbelt": "Conveyor Belt",
+  "block.gregecore.itemtranslocator": "Item I/O",
+
+  "creativetab.gregecoretab": "GregE core"
 }

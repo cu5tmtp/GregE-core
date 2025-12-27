@@ -17,15 +17,23 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, GregECore.MOD_ID);
 
-    public static final RegistryObject<Block> LINEARACCELERATOR = registerBlock("linearaccelerator",
-            () -> new HorizontalFacingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
+    public static final RegistryObject<Block> LINEARACCELERATOR =
+            registerBlock("linearaccelerator", () -> new HorizontalFacingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> CONVEYORBELT =
+            registerBlock("conveyorbelt", () -> new HorizontalFacingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> ITEMTRANSLOCATOR =
+            registerBlock("itemtranslocator", () -> new HorizontalFacingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "gregecore:block/conveyorbelt" },
+    "facing=south": { "model": "gregecore:block/conveyorbelt", "y": 180 },
+    "facing=west":  { "model": "gregecore:block/conveyorbelt", "y": 270 },
+    "facing=east":  { "model": "gregecore:block/conveyorbelt", "y": 90 }
+  }
+}

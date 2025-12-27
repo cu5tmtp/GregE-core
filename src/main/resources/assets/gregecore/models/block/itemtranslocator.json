@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "minecraft:block/obsidian",
+    "down": "gregecore:block/accelrest",
+    "up": "gregecore:block/accelrest",
+    "north": "gregecore:block/chute",
+    "south": "gregecore:block/accelrest",
+    "east": "gregecore:block/accelrest",
+    "west": "gregecore:block/accelrest"
+  }
+}
