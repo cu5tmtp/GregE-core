@@ -1,9 +1,13 @@
 package net.cu5tmtp.GregECore;
 
+import com.gregtechceu.gtceu.api.GTCEuAPI;
+import com.gregtechceu.gtceu.api.machine.MachineDefinition;
+import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.mojang.logging.LogUtils;
 import net.cu5tmtp.GregECore.block.ModBlocks;
+import net.cu5tmtp.GregECore.gregstuff.GregEMultiInit;
 import net.cu5tmtp.GregECore.item.ModItems;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -16,50 +20,47 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(GregECore.MOD_ID)
-public class GregECore
-{
-    // Define mod id in a common place for everything to reference
+public class GregECore {
     public static final String MOD_ID = "gregecore";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public GregECore(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+    public static final GTRegistrate REGISTRATE = GTRegistrate.create(MOD_ID);
+
+    public GregECore() {
+        REGISTRATE.registerRegistrate();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
 
-        modEventBus.addListener(this::commonSetup);
+        modEventBus.addGenericListener(MachineDefinition.class, this::registerMachines);
 
-        MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
 
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
+        GregEMultiInit.initGregEMulti();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
     }
 
-    // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
         }
     }
 }

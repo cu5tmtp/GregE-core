@@ -1,6 +1,7 @@
 package net.cu5tmtp.GregECore;
 
 import net.cu5tmtp.GregECore.block.ModBlocks;
+import net.cu5tmtp.GregECore.gregstuff.AcceleratedEBF;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,6 +21,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.LINEARACCELERATOR.get());
                         pOutput.accept(ModBlocks.CONVEYORBELT.get());
                         pOutput.accept(ModBlocks.ITEMTRANSLOCATOR.get());
+                        pOutput.accept(AcceleratedEBF.ACCELERATEDEBF.getItem());
                     })
                     .build());
 
