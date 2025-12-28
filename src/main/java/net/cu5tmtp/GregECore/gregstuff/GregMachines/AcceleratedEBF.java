@@ -113,8 +113,15 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"),
                                  GTCEu.id("block/multiblock/electric_blast_furnace"))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
-            .tooltips(Component.literal("The machine starts speeding up with the power of magic remnants in the coils." +
-                    " Depending on the coil, the machine speeds up faster. The coils give you the exact amount of recipe reduction.").withStyle(style -> style.withColor(0x00FFFF)))
+            .tooltips(Component.literal("Abilities: Perfect Overclock and Magical Coils").withStyle(style -> style.withColor(0xFFD700)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("Avaible coils: Manasteel, Twilight and Desh").withStyle(style -> style.withColor(0xFFD700)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("The machine starts speeding up with the power of the magic remnants in the coils." +
+                    " Depending on the coil, the machine speeds up faster. The coils tell you the exact amount of recipe time reduction.").withStyle(style -> style.withColor(0x00FFFF)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("The machine only accepts 18 of the same coil. Do not mix them. After the machine forms, " +
+                    "you can see your Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips()
             .register();
 

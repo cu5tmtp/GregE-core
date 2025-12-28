@@ -9,6 +9,8 @@ import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
+import com.gregtechceu.gtceu.common.data.GCYMBlocks;
+import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregEModifiers;
@@ -16,6 +18,7 @@ import net.cu5tmtp.GregECore.tag.ModTag;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,7 +26,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
-import static com.gregtechceu.gtceu.common.data.GTBlocks.CASING_INVAR_HEATPROOF;
+import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore.REGISTRATE;
 
 public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
@@ -46,12 +49,13 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
 
         var back = getFrontFacing().getOpposite();
 
-        BlockPos scanStart = getPos().above().relative(back);
+        BlockPos scanStart = getPos().above().relative(back,2);
 
         java.util.Set<Block> foundCoils = new java.util.HashSet<>();
 
-        for (int y = 0; y <= 1; y++) {
+        for (int y = 0; y <= 4; y++) {
             BlockPos currentCenter = scanStart.above(y);
+            if (y == 2) continue;
 
             for (int x = -1; x <= 1; x++) {
                 for (int z = -1; z <= 1; z++) {
@@ -89,34 +93,46 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
             .multiblock("giantacceleratedebf", GiantAcceleratedEBF::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTRecipeTypes.BLAST_RECIPES)
-            .recipeModifiers(GregEModifiers::giantAcceleratedEBFModifier, GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT)
+            .recipeModifiers(GregEModifiers::giantAcceleratedEBFModifier, GTRecipeModifiers.OC_PERFECT)
             .appearanceBlock(CASING_INVAR_HEATPROOF)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
-                        .aisle("BBB", "DDD", "DDD", "BBB")
-                        .aisle("BBB", "D D", "D D", "BCB")
-                        .aisle("BAB", "DDD", "DDD", "BBB")
+                        .aisle("BFFFB", "G   G", "G   G", "G   G", "G   G", "G   G", "BFFFB")
+                        .aisle("BBBBB", " DDD ", " DDD ", " EEE ", " DDD ", " DDD ", "BBBBB")
+                        .aisle("BBBBB", " D D ", " D D ", " E E ", " D D ", " D D ", "BBCBB")
+                        .aisle("BBBBB", " DDD ", " DDD ", " EEE ", " DDD ", " DDD ", "BBBBB")
+                        .aisle("BFAFB", "G   G", "G   G", "G   G", "G   G", "G   G", "BFFFB")
                         .where('A', Predicates.controller(blocks(definition.getBlock())))
-                        .where('B', Predicates.blocks(CASING_INVAR_HEATPROOF.get())
+                        .where('B', Predicates.blocks(CASING_TUNGSTENSTEEL_ROBUST.get())
                                             .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                             .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(2))
                                             .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(2))
                                             .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2))
                                             .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(2))
-                                            .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
-                                            .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
+                                            .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2)))
                         .where('C', Predicates.abilities(PartAbility.MUFFLER).setMaxGlobalLimited(1))
                         .where('D', Predicates.blockTag(ModTag.Blocks.MAGICAL_COILS_T2))
+                        .where('E', Predicates.blocks(CASING_EXTREME_ENGINE_INTAKE.get()))
+                        .where('F', Predicates.blocks(FIREBOX_TUNGSTENSTEEL.get()))
+                        .where('G', Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:tungsten_carbide_frame"))))
                         .where(' ', Predicates.any())
 
                         .build();
             })
-            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"),
-                                 GTCEu.id("block/multiblock/electric_blast_furnace"))
+            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
+                                 GTCEu.id("block/multiblock/distillation_tower"))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
-            .tooltips(Component.literal("The machine starts speeding up with the power of magic remnants in the coils." +
-                    " Depending on the coil, the machine speeds up faster. The coils give you the exact amount of recipe reduction." +
-                    " The power of the coils grows. Now they are able to double the output.").withStyle(style -> style.withColor(0x00FFFF)))
+            .tooltips(Component.literal("Abilities: Perfect Overclock and Magical Coils").withStyle(style -> style.withColor(0xFFD700)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("Avaible coils: Malachite").withStyle(style -> style.withColor(0xFFD700)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("The machine starts speeding up with the power of the magic remnants in the coils." +
+                    " Depending on the coil, the machine speeds up faster. The coils tell you the exact amount of recipe time reduction.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("The power of the coils grow. Now they are able to double the output.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("The machine only accepts 18 of the same coil. Do not mix them. After the machine forms, " +
+                    "you can see your Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
             .register();
 
     @Override
