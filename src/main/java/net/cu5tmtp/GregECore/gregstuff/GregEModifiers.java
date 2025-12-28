@@ -1,56 +1,43 @@
 package net.cu5tmtp.GregECore.gregstuff;
 
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
-import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
-import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
+import com.gregtechceu.gtceu.api.recipe.OverclockingLogic;
+import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
+import com.mojang.logging.LogUtils;
+import org.slf4j.Logger;
 
 public class GregEModifiers {
-    public static final RecipeModifier WRONG_COILS = GregEModifiers::weakMagicalCoil;
-    public static final RecipeModifier WEAK_MAGICAL_COIL = GregEModifiers::weakMagicalCoil;
-    public static final RecipeModifier AVERAGE_MAGICAL_COIL = GregEModifiers::averageMagicalCoil;
-    public static final RecipeModifier STRONG_MAGICAL_COIL = GregEModifiers::strongMagicalCoil;
 
-    public static ModifierFunction wrongCoils(MetaMachine machine, GTRecipe recipe) {
-        if (machine instanceof IMultiController controller && controller.isFormed()) {
-
-            return ModifierFunction.builder()
-                    .durationModifier(ContentModifier.multiplier(1000))
-                    .build();
+    public static ModifierFunction acceleratedEBFModifier(MetaMachine machine, GTRecipe recipe) {
+        if (!(machine instanceof AcceleratedEBF ebf)) {
+            return ModifierFunction.NULL;
         }
-        return ModifierFunction.IDENTITY;
-    }
 
-    public static ModifierFunction weakMagicalCoil(MetaMachine machine, GTRecipe recipe) {
-        if (machine instanceof IMultiController controller && controller.isFormed()) {
+        int blastFurnaceTemperature = ebf.getMaxTemp();
+        int recipeTemp = recipe.data.contains("ebf_temp") ? recipe.data.getInt("ebf_temp") : 0;
 
-            return ModifierFunction.builder()
-                    .durationModifier(ContentModifier.multiplier(0.75))
-                    .build();
+        if (recipeTemp > blastFurnaceTemperature) {
+            return ModifierFunction.NULL;
         }
-        return ModifierFunction.IDENTITY;
-    }
 
-    public static ModifierFunction averageMagicalCoil(MetaMachine machine, GTRecipe recipe) {
-        if (machine instanceof IMultiController controller && controller.isFormed()) {
-
-            return ModifierFunction.builder()
-                    .durationModifier(ContentModifier.multiplier(0.6))
-                    .build();
+        if (RecipeHelper.getRecipeEUtTier(recipe) > ebf.getTier()) {
+            return ModifierFunction.NULL;
         }
-        return ModifierFunction.IDENTITY;
-    }
 
-    public static ModifierFunction strongMagicalCoil(MetaMachine machine, GTRecipe recipe) {
-        if (machine instanceof IMultiController controller && controller.isFormed()) {
+        double speedMultiplier = switch (blastFurnaceTemperature) {
+            case 1800 -> 0.85;
+            case 3600 -> 0.70;
+            case 5400 -> 0.55;
+            default -> 1.0;
+        };
 
-            return ModifierFunction.builder()
-                    .durationModifier(ContentModifier.multiplier(0.5))
-                    .build();
-        }
-        return ModifierFunction.IDENTITY;
+        return ModifierFunction.builder()
+                .eutMultiplier(0.8)
+                .durationMultiplier(speedMultiplier)
+                .build();
     }
 }
 
