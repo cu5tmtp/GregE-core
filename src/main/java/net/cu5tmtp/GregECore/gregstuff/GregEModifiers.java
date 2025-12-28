@@ -8,9 +8,20 @@ import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
 
 public class GregEModifiers {
+    public static final RecipeModifier WRONG_COILS = GregEModifiers::weakMagicalCoil;
     public static final RecipeModifier WEAK_MAGICAL_COIL = GregEModifiers::weakMagicalCoil;
     public static final RecipeModifier AVERAGE_MAGICAL_COIL = GregEModifiers::averageMagicalCoil;
     public static final RecipeModifier STRONG_MAGICAL_COIL = GregEModifiers::strongMagicalCoil;
+
+    public static ModifierFunction wrongCoils(MetaMachine machine, GTRecipe recipe) {
+        if (machine instanceof IMultiController controller && controller.isFormed()) {
+
+            return ModifierFunction.builder()
+                    .durationModifier(ContentModifier.multiplier(1000))
+                    .build();
+        }
+        return ModifierFunction.IDENTITY;
+    }
 
     public static ModifierFunction weakMagicalCoil(MetaMachine machine, GTRecipe recipe) {
         if (machine instanceof IMultiController controller && controller.isFormed()) {

@@ -2,5 +2,9 @@
   "block.gregecore.linearaccelerator": "Linear Accelerator",
   "block.gregecore.conveyorbelt": "Conveyor Belt",
   "block.gregecore.itemtranslocator": "Item I/O",
+  "block.gregecore.manasteel_coil": "Manasteel Coil",
+  "block.gregecore.desh_coil": "Desh Coil",
+  "block.gregecore.malachite_coil": "Malachite Coil",
+  "block.gregecore.twilight_coil": "Twilight Coil",
   "block.gregecore.acceleratedebf": "Accelerated EBF"
 }

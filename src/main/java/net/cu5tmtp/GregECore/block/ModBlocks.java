@@ -17,6 +17,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,10 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, GregECore.MOD_ID);
 
+    public static final List<RegistryObject<Block>> TAB_BLOCKS = new ArrayList<>();
 
+
+    //Blocks that can rotate
     public static final RegistryObject<Block> LINEARACCELERATOR =
             registerBlock("linearaccelerator", () -> new HorizontalFacingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> CONVEYORBELT =
@@ -35,9 +39,20 @@ public class ModBlocks {
     public static final RegistryObject<Block> ITEMTRANSLOCATOR =
             registerBlock("itemtranslocator", () -> new HorizontalFacingBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
+    //Block that are static
+    public static final RegistryObject<Block> MANASTEEL_COIL =
+            registerBlock("manasteel_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> TWILIGHT_COIL =
+            registerBlock("twilight_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> DESH_COIL =
+            registerBlock("desh_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> MALACHITE_COIL =
+            registerBlock("malachite_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
+        TAB_BLOCKS.add((RegistryObject<Block>) toReturn);
         return toReturn;
     }
 

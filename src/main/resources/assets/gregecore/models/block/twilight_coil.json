@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "minecraft:block/obsidian",
+    "down": "gregecore:block/coils/coiltopbot",
+    "up": "gregecore:block/coils/coiltopbot",
+    "north": "gregecore:block/coils/twilightcoil",
+    "south": "gregecore:block/coils/twilightcoil",
+    "east": "gregecore:block/coils/twilightcoil",
+    "west": "gregecore:block/coils/twilightcoil"
+  }
+}

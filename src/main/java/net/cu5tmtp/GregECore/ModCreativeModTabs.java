@@ -14,13 +14,11 @@ public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GregECore.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("gregecoretab",
+    public static final RegistryObject<CreativeModeTab> GREGE_TAB = CREATIVE_MODE_TABS.register("gregecoretab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.LINEARACCELERATOR.get()))
-                    .title(Component.translatable("creativetab.gregecoretab"))
+                    .title(Component.translatable("GregE core"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModBlocks.LINEARACCELERATOR.get());
-                        pOutput.accept(ModBlocks.CONVEYORBELT.get());
-                        pOutput.accept(ModBlocks.ITEMTRANSLOCATOR.get());
+                        ModBlocks.TAB_BLOCKS.forEach(block -> pOutput.accept(block.get()));
                         pOutput.accept(AcceleratedEBF.ACCELERATEDEBF.getItem());
                     })
                     .build());
