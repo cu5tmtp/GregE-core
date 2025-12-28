@@ -2,12 +2,8 @@ package net.cu5tmtp.GregECore.gregstuff;
 
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
-import com.gregtechceu.gtceu.api.recipe.OverclockingLogic;
 import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
-import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
-import com.mojang.logging.LogUtils;
-import org.slf4j.Logger;
 
 public class GregEModifiers {
 

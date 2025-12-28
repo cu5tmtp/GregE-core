@@ -10,21 +10,17 @@ import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMa
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
-import com.mojang.logging.LogUtils;
 import net.cu5tmtp.GregECore.tag.ModTag;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.slf4j.Logger;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.CASING_INVAR_HEATPROOF;
 import static net.cu5tmtp.GregECore.GregECore.REGISTRATE;
 
 public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
-
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public AcceleratedEBF(IMachineBlockEntity holder, Object... args) {
         super(holder, args);
@@ -42,26 +38,19 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
         Level level = getLevel();
         if (level == null || level.isClientSide) return;
 
-        // 1. Definujeme směr "dozadu" vzhledem k tomu, kam kouká controller
         var back = getFrontFacing().getOpposite();
 
-        // 2. Najdeme startovní bod skenování: o 1 nahoru a o 1 dozadu od controlleru
-        // Toto je středový prázdný blok v prvním patře cívek
         BlockPos scanStart = getPos().above().relative(back);
 
         java.util.Set<Block> foundCoils = new java.util.HashSet<>();
 
-        // 3. Projdeme dvě patra (y=0 je první patro cívek, y=1 je druhé)
         for (int y = 0; y <= 1; y++) {
             BlockPos currentCenter = scanStart.above(y);
 
-            // Kolem tohoto středu zkontrolujeme všech 8 sousedních bloků
             for (int x = -1; x <= 1; x++) {
                 for (int z = -1; z <= 1; z++) {
-                    // Přeskočíme střed (vzduch, kde probíhá recept)
                     if (x == 0 && z == 0) continue;
 
-                    // Najdeme blok cívky relativně k aktuálnímu středu patra
                     BlockPos coilPos = currentCenter.offset(x, 0, z);
                     Block block = level.getBlockState(coilPos).getBlock();
 
@@ -72,7 +61,6 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
 
         if (foundCoils.size() != 1) {
             this.coilTemp = 0;
-            LOGGER.info("Sken selhal: Nalezeno {} druhu bloku na pozicich civek.", foundCoils.size());
             return;
         }
 
@@ -85,8 +73,6 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
             case "gregecore:desh_coil"      -> 5400;
             default -> 0;
         };
-
-        LOGGER.info("Sken uspesny: {} | Teplota nastavena na: {}K", registryName, this.coilTemp);
     }
 
     public int getMaxTemp() {
