@@ -118,7 +118,7 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
             .tooltips(Component.literal("Avaible coils: Manasteel, Twilight and Desh").withStyle(style -> style.withColor(0xFFD700)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("The machine starts speeding up with the power of the magic remnants in the coils." +
-                    " Depending on the coil, the machine speeds up faster. The coils tell you the exact amount of recipe time reduction.").withStyle(style -> style.withColor(0x00FFFF)))
+                    " Depending on the coil, the machine speeds up faster. The coils tell you the exact amount of recipe time reduction.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("The machine only accepts 18 of the same coil. Do not mix them. After the machine forms, " +
                     "you can see your Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
@@ -132,9 +132,9 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
         if (isFormed()) {
             textList.add(Component.translatable("Coil temperature: " + coilTemp + "K").withStyle(ChatFormatting.AQUA));
             switch (coilTemp){
-                case 1800 -> textList.add(Component.translatable("Recipes are shortened by 15%." ).withStyle(ChatFormatting.GREEN));
-                case 3600 -> textList.add(Component.translatable("Recipes are shortened by 30%.").withStyle(ChatFormatting.GREEN));
-                case 5400 -> textList.add(Component.translatable("Recipes are shortened by 45%.").withStyle(ChatFormatting.GREEN));
+                case 1800 -> textList.add(Component.translatable("Recipes are shortened by 20%." ).withStyle(ChatFormatting.GREEN));
+                case 3600 -> textList.add(Component.translatable("Recipes are shortened by 40%.").withStyle(ChatFormatting.GREEN));
+                case 5400 -> textList.add(Component.translatable("Recipes are shortened by 60%.").withStyle(ChatFormatting.GREEN));
                 default -> textList.add(Component.translatable("Different coils detected!").withStyle(ChatFormatting.RED));
             }
         }

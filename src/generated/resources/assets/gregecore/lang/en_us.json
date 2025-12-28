@@ -7,8 +7,8 @@
   "block.gregecore.desh_coil": "Desh Coil",
   "block.gregecore.malachite_coil": "Malachite Coil",
 
-  "tooltip.gregecore.manasteel_coil": "Coil recipe time reduction: 15%",
-  "tooltip.gregecore.twilight_coil": "Coil recipe time reduction: 30%",
-  "tooltip.gregecore.desh_coil": "Coil recipe time reduction: 45%",
+  "tooltip.gregecore.manasteel_coil": "Coil recipe time reduction: 20%",
+  "tooltip.gregecore.twilight_coil": "Coil recipe time reduction: 40%",
+  "tooltip.gregecore.desh_coil": "Coil recipe time reduction: 60%",
   "tooltip.gregecore.malachite_coil": "Coil recipe time reduction: 20%, Coil doubles the outputs."
 }
