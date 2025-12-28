@@ -1,7 +1,7 @@
 package net.cu5tmtp.GregECore.gregstuff;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.block.IMachineBlock;
+import com.gregtechceu.gtceu.api.block.ICoilType;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
@@ -11,16 +11,11 @@ import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMa
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
-import com.gregtechceu.gtceu.common.data.GTBlocks;
-import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import net.cu5tmtp.GregECore.tag.ModTag;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
@@ -35,23 +30,18 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
         super(holder, args);
     }
 
-    private static RecipeModifier currentModifier = GregEModifiers::weakMagicalCoil;
-
-    private @Nullable TickableSubscription tickSubscription;
+    private static RecipeModifier currentModifier = GregEModifiers::wrongCoils;
 
     @Override
     public void onStructureFormed() {
         super.onStructureFormed();
-        checkCoil();
+        this.checkCoil();
     }
 
     @Override
-    public void onStructureInvalid() {
-        super.onStructureInvalid();
-        if (tickSubscription != null) {
-            tickSubscription.unsubscribe();
-            tickSubscription = null;
-        }
+    public void onLoad() {
+        super.onLoad();
+        this.checkCoil();
     }
 
     private void checkCoil() {
@@ -73,7 +63,7 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
         }
 
         if (foundCoils.size() > 1) {
-            this.currentModifier = GregEModifiers::wrongCoils;
+            currentModifier = GregEModifiers::wrongCoils;
             return;
         }
 
@@ -85,7 +75,7 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
             case "gregecore:twilight_coil"  -> currentModifier = GregEModifiers::averageMagicalCoil;
             case "gregecore:desh_coil"      -> currentModifier = GregEModifiers::strongMagicalCoil;
             default                         -> currentModifier = GregEModifiers::wrongCoils;
-            }
+        }
     }
 
     public static final MachineDefinition ACCELERATEDEBF = REGISTRATE
@@ -113,8 +103,8 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
 
                         .build();
             })
-            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"), GTCEu.id("block/multiblock/electric_blast_furnace"))
-
+            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"),
+                                 GTCEu.id("block/multiblock/electric_blast_furnace"))
             .register();
 
     public static void init() {}
