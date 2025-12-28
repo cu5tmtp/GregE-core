@@ -1,11 +1,10 @@
-package net.cu5tmtp.GregECore;
+package net.cu5tmtp.GregECore.gregstuff.GregUtils;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.mojang.logging.LogUtils;
 import net.cu5tmtp.GregECore.block.ModBlocks;
-import net.cu5tmtp.GregECore.gregstuff.GregEMultiInit;
 import net.cu5tmtp.GregECore.item.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;

@@ -1,11 +1,10 @@
 package net.cu5tmtp.GregECore.item;
 
-import net.cu5tmtp.GregECore.GregECore;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =

@@ -1,10 +1,15 @@
 package net.cu5tmtp.GregECore.block;
 
-import net.cu5tmtp.GregECore.GregECore;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 import net.cu5tmtp.GregECore.item.ModItems;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -16,11 +21,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -41,13 +45,36 @@ public class ModBlocks {
 
     //Block that are static
     public static final RegistryObject<Block> MANASTEEL_COIL =
-            registerBlock("manasteel_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            registerBlock("manasteel_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+                    super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+                    pTooltip.add(Component.translatable("tooltip.gregecore.manasteel_coil").withStyle(ChatFormatting.GREEN));
+                }});
     public static final RegistryObject<Block> TWILIGHT_COIL =
-            registerBlock("twilight_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            registerBlock("twilight_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+                    super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+                    pTooltip.add(Component.translatable("tooltip.gregecore.twilight_coil").withStyle(ChatFormatting.GREEN));
+                }
+            });
     public static final RegistryObject<Block> DESH_COIL =
-            registerBlock("desh_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            registerBlock("desh_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+                    super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+                    pTooltip.add(Component.translatable("tooltip.gregecore.desh_coil").withStyle(ChatFormatting.GREEN));
+                }
+            });
     public static final RegistryObject<Block> MALACHITE_COIL =
-            registerBlock("malachite_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            registerBlock("malachite_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+                    super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+                    pTooltip.add(Component.translatable("tooltip.gregecore.malachite_coil").withStyle(ChatFormatting.GREEN));
+                }
+            });
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

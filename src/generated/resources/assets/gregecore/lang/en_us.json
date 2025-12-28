@@ -1,10 +1,14 @@
 {
-  "block.gregecore.linearaccelerator": "Linear Accelerator",
-  "block.gregecore.conveyorbelt": "Conveyor Belt",
-  "block.gregecore.itemtranslocator": "Item I/O",
+  "block.gregecore.acceleratedebf": "§lAccelerated EBF§g",
+  "block.gregecore.giantacceleratedebf": "§lGiant Accelerated EBF§g",
+
   "block.gregecore.manasteel_coil": "Manasteel Coil",
+  "block.gregecore.twilight_coil": "Twilight Coil",
   "block.gregecore.desh_coil": "Desh Coil",
   "block.gregecore.malachite_coil": "Malachite Coil",
-  "block.gregecore.twilight_coil": "Twilight Coil",
-  "block.gregecore.acceleratedebf": "Accelerated EBF"
+
+  "tooltip.gregecore.manasteel_coil": "Coil recipe time reduction: 15%",
+  "tooltip.gregecore.twilight_coil": "Coil recipe time reduction: 30%",
+  "tooltip.gregecore.desh_coil": "Coil recipe time reduction: 45%",
+  "tooltip.gregecore.malachite_coil": "Coil recipe time reduction: 20%, Coil doubles the outputs."
 }

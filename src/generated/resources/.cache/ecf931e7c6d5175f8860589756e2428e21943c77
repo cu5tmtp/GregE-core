@@ -1,6 +1,9 @@
-// 1.20.1	2025-12-27T22:37:05.5291354	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2025-12-28T17:39:28.5198993	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 b3c78504318281555d96db9c7eab46d9091cf7bc assets/gregecore/blockstates/acceleratedebf.json
-aeca33be4be6514dd48311fe94698ad8cb221119 assets/gregecore/lang/en_ud.json
-0d9164728e2107811c1da5be143476df54453af2 assets/gregecore/lang/en_us.json
+01debd1f715479fc162486cc4620f189df521e2e assets/gregecore/blockstates/giantacceleratedebf.json
+306316177641ee285971496215698873a548df44 assets/gregecore/lang/en_ud.json
+d633676a176d4d01b6ea48f9599f3c14fa77c7bb assets/gregecore/lang/en_us.json
 fea4368454b99832d361890c89a0560cfb9aede1 assets/gregecore/models/block/machine/acceleratedebf.json
+1dd804b62c8feead33f6821623dc605b7b582fe9 assets/gregecore/models/block/machine/giantacceleratedebf.json
 2608050db5422140ce9f9829c8ad525c49af819d assets/gregecore/models/item/acceleratedebf.json
+9272526de3a4d31b124064fad01d64e6344fcc71 assets/gregecore/models/item/giantacceleratedebf.json

@@ -1,6 +1,6 @@
 package net.cu5tmtp.GregECore.tag;
 
-import net.cu5tmtp.GregECore.GregECore;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -12,6 +12,8 @@ public class ModTag {
     public static class Blocks{
 
         public static final TagKey<Block> MAGICAL_COILS_T1 = tag("magical_coils_t1");
+
+        public static final TagKey<Block> MAGICAL_COILS_T2 = tag("magical_coils_t2");
         private static TagKey<Block> tag(String name){
             return BlockTags.create(new ResourceLocation(GregECore.MOD_ID, name));
         }

@@ -1,4 +1,4 @@
-package net.cu5tmtp.GregECore.gregstuff;
+package net.cu5tmtp.GregECore.gregstuff.GregMachines;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
@@ -9,16 +9,22 @@ import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
+import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregEModifiers;
 import net.cu5tmtp.GregECore.tag.ModTag;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.List;
+
 import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.CASING_INVAR_HEATPROOF;
-import static net.cu5tmtp.GregECore.GregECore.REGISTRATE;
+import static net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore.REGISTRATE;
 
 public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
 
@@ -83,7 +89,7 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
             .multiblock("acceleratedebf", AcceleratedEBF::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTRecipeTypes.BLAST_RECIPES)
-            .recipeModifiers(GregEModifiers::acceleratedEBFModifier)
+            .recipeModifiers(GregEModifiers::acceleratedEBFModifier, GTRecipeModifiers.OC_PERFECT)
             .appearanceBlock(CASING_INVAR_HEATPROOF)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
@@ -106,7 +112,26 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
             })
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_heatproof"),
                                  GTCEu.id("block/multiblock/electric_blast_furnace"))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("The machine starts speeding up with the power of magic remnants in the coils." +
+                    " Depending on the coil, the machine speeds up faster. The coils give you the exact amount of recipe reduction.").withStyle(style -> style.withColor(0x00FFFF)))
+            .tooltips()
             .register();
+
+    @Override
+    public void addDisplayText(List<Component> textList) {
+        super.addDisplayText(textList);
+
+        if (isFormed()) {
+            textList.add(Component.translatable("Coil temperature: " + coilTemp + "K").withStyle(ChatFormatting.AQUA));
+            switch (coilTemp){
+                case 1800 -> textList.add(Component.translatable("Recipes are shortened by 15%." ).withStyle(ChatFormatting.GREEN));
+                case 3600 -> textList.add(Component.translatable("Recipes are shortened by 30%.").withStyle(ChatFormatting.GREEN));
+                case 5400 -> textList.add(Component.translatable("Recipes are shortened by 45%.").withStyle(ChatFormatting.GREEN));
+                default -> textList.add(Component.translatable("Different coils detected!").withStyle(ChatFormatting.RED));
+            }
+        }
+    }
 
     public static void init() {}
 }

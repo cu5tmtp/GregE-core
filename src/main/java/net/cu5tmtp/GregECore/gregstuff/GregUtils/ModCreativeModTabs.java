@@ -1,7 +1,8 @@
-package net.cu5tmtp.GregECore;
+package net.cu5tmtp.GregECore.gregstuff.GregUtils;
 
 import net.cu5tmtp.GregECore.block.ModBlocks;
-import net.cu5tmtp.GregECore.gregstuff.AcceleratedEBF;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.AcceleratedEBF;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

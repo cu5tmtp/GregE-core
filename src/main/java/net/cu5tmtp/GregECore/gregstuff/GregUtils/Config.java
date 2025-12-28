@@ -1,4 +1,4 @@
-package net.cu5tmtp.GregECore;
+package net.cu5tmtp.GregECore.gregstuff.GregUtils;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
