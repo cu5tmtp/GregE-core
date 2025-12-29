@@ -13,5 +13,9 @@
 
   "material.gregecore.deionized_water": "Deionized Water",
   "material.gregecore.molten_franklinite": "Molten Franklinite",
-  "material.gregecore.molten_mythril": "Molten Mythril"
+  "material.gregecore.molten_mythril": "Molten Mythril",
+
+  "block.gregecore.linearaccelerator": "Linear Accelerator",
+  "block.gregecore.conveyorbelt": "Conveyor Belt",
+  "block.gregecore.itemtranslocator": "Chute"
 }
