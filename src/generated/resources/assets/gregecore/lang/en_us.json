@@ -1,14 +1,21 @@
 {
-  "block.gregecore.acceleratedebf": "§l§gAccelerated EBF",
-  "block.gregecore.giantacceleratedebf": "§l§gGiant Accelerated EBF",
+  "block.gregecore.acceleratedebf": "§lAccelerated EBF§g",
+  "block.gregecore.giantacceleratedebf": "§lGiant Accelerated EBF§g",
 
   "block.gregecore.manasteel_coil": "Manasteel Coil",
   "block.gregecore.twilight_coil": "Twilight Coil",
   "block.gregecore.desh_coil": "Desh Coil",
   "block.gregecore.malachite_coil": "Malachite Coil",
 
-  "tooltip.gregecore.manasteel_coil": "Coil recipe time reduction: 20%",
-  "tooltip.gregecore.twilight_coil": "Coil recipe time reduction: 40%",
-  "tooltip.gregecore.desh_coil": "Coil recipe time reduction: 60%",
-  "tooltip.gregecore.malachite_coil": "Coil recipe time reduction: 20%, Coil doubles the outputs."
+  "tooltip.gregecore.manasteel_coil": "Coil recipe time reduction: 15%",
+  "tooltip.gregecore.twilight_coil": "Coil recipe time reduction: 30%",
+  "tooltip.gregecore.desh_coil": "Coil recipe time reduction: 45%",
+  "tooltip.gregecore.malachite_coil": "Coil recipe time reduction: 20%, Coil doubles the outputs.",
+
+  "material.gregecore.franklinite": "Franklinite",
+  "material.gregecore.mythril": "Mythril",
+  "material.gregecore.nobelium": "Nobelium",
+
+  "material.gregecore.molten_franklinite": "Molten Franklinite",
+  "material.gregecore.molten_mythril": "Molten Mythril"
 }

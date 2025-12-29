@@ -1,10 +1,13 @@
 package net.cu5tmtp.GregECore.gregstuff.GregUtils;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
+import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
+import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.mojang.logging.LogUtils;
 import net.cu5tmtp.GregECore.block.ModBlocks;
+import net.cu5tmtp.GregECore.item.GreggyItems;
 import net.cu5tmtp.GregECore.item.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,9 +33,11 @@ public class GregECore {
         REGISTRATE.registerRegistrate();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
+        modEventBus.addListener(this::addMaterialRegistries);
+        modEventBus.addListener(this::addMaterials);
+        ModBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
 
         modEventBus.addGenericListener(MachineDefinition.class, this::registerMachines);
 
@@ -42,8 +47,20 @@ public class GregECore {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+    public static ResourceLocation id(String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
+
+    private void addMaterialRegistries(MaterialRegistryEvent event) {
+        GTCEuAPI.materialManager.createRegistry(MOD_ID);
+    }
+
+    private void addMaterials(MaterialEvent event) {
+        GreggyItems.register();
+    }
+
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        GregEMultiInit.initGregEMulti();
+        GregEStuffInit.initGregEMulti();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

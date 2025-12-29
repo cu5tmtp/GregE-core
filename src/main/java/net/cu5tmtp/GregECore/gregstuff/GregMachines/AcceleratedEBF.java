@@ -121,7 +121,7 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
                     " Depending on the coil, the machine speeds up faster. The coils tell you the exact amount of recipe time reduction.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("The machine only accepts 18 of the same coil. Do not mix them. After the machine forms, " +
-                    "you can see your Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
+                    "you can see activated Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips()
             .register();
 

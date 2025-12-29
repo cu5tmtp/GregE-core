@@ -132,7 +132,7 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
             .tooltips(Component.literal("The power of the coils grow. Now they are able to double the output.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("The machine only accepts 18 of the same coil. Do not mix them. After the machine forms, " +
-                    "you can see your Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
+                    "you can see activated Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
             .register();
 
     @Override
