@@ -7,5 +7,7 @@ All added items will not have recipes, you will have to add them yourself.
 
 You can use this in your modpack.
 
+Currently it adds: Accelerated EBF, with custom coils, that are faster than normal EBF.
+
 For GTCEu - 7.2.1
 
