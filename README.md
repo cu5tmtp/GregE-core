@@ -1,1 +1,11 @@
 # GregE-core
+This is a core mod for modpack GregE.
+
+All added machines will be able to work without the modpack.
+
+All added items will not have recipes, you will have to add them yourself.
+
+You can use this in your modpack.
+
+For GTCEu - 7.2.1
+
