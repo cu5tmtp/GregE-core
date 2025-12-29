@@ -5,6 +5,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
+import com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.AcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.GiantAcceleratedEBF;
 
@@ -27,10 +28,10 @@ public class GregEModifiers {
         }
 
         double speedMultiplier = switch (blastFurnaceTemperature) {
-            case 1800 -> 0.8;
-            case 3600 -> 0.6;
-            case 5400 -> 0.4;
-            default -> 1.0;
+            case 1800 -> 0.85;
+            case 3600 -> 0.7;
+            case 5400 -> 0.55;
+            default -> 0.85;
         };
 
         return ModifierFunction.builder()
@@ -55,18 +56,33 @@ public class GregEModifiers {
             return ModifierFunction.NULL;
         }
 
+
         double speedMultiplier = switch (blastFurnaceTemperature) {
             case 7400 -> 0.8;
             case 9200 -> 0.6;
             case 11000 -> 0.4;
-            default -> 1.0;
+            default -> 0.8;
         };
 
-        return ModifierFunction.builder()
-                .eutMultiplier(0.6)
-                .durationMultiplier(speedMultiplier)
-                .outputModifier(ContentModifier.multiplier(2))
-                .build();
+        int parallelsMax = switch (blastFurnaceTemperature) {
+            case 7400 -> 2;
+            case 9200 -> 4;
+            case 11000 -> 8;
+            default -> 2;
+        };
+
+        //This part of the code is a inspiration from StarT core - Throughput Boosting, I modified it to work with my custom coils.
+        int parallelsAvailable = Math.max(0, ParallelLogic.getParallelAmountFast(machine, recipe, parallelsMax));
+
+        if (parallelsAvailable >= parallelsMax) {
+            return ModifierFunction.builder()
+                    .modifyAllContents(ContentModifier.multiplier(parallelsMax))
+                    .eutMultiplier(speedMultiplier)
+                    .durationMultiplier(speedMultiplier)
+                    .parallels(parallelsMax)
+                    .build();
+        }
+        return ModifierFunction.IDENTITY;
     }
 }
 

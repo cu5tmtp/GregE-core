@@ -2,18 +2,25 @@ package net.cu5tmtp.GregECore.gregstuff.GregMachines;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
+import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
+import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
+import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
-import com.gregtechceu.gtceu.common.data.GCYMBlocks;
-import com.gregtechceu.gtceu.common.data.GTBlocks;
+import com.gregtechceu.gtceu.api.recipe.GTRecipe;
+import com.gregtechceu.gtceu.api.transfer.fluid.FluidHandlerList;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
+import com.gregtechceu.gtceu.utils.GTTransferUtils;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMaps;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregEModifiers;
+import net.cu5tmtp.GregECore.item.GreggyItems;
 import net.cu5tmtp.GregECore.tag.ModTag;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -21,8 +28,14 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
@@ -36,11 +49,76 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
     }
 
     private int coilTemp = 0;
+    private IFluidHandler coolantHandler;
 
     @Override
     public void onStructureFormed() {
         super.onStructureFormed();
         this.checkCoil();
+        List<IFluidHandler> coolantContainers = new ArrayList<>();
+        Long2ObjectMap<IO> ioMap = getMultiblockState().getMatchContext().getOrCreate("ioMap", Long2ObjectMaps::emptyMap);
+
+        for (IMultiPart part : getParts()) {
+            IO io = ioMap.getOrDefault(part.self().getPos().asLong(), IO.BOTH);
+            if (io == IO.NONE || io == IO.OUT) continue;
+            var handlerLists = part.getRecipeHandlers();
+            for (var handlerList : handlerLists) {
+                if (!handlerList.isValid(io)) continue;
+                handlerList.getCapability(FluidRecipeCapability.CAP).stream()
+                        .filter(IFluidHandler.class::isInstance)
+                        .map(IFluidHandler.class::cast)
+                        .forEach(coolantContainers::add);
+            }
+        }
+        this.coolantHandler = new FluidHandlerList(coolantContainers);
+    }
+
+    @Override
+    public boolean onWorking() {
+        int amountToDrain = 1;
+        Fluid coolant = GreggyItems.DEIONIZED_WATER.getFluid();
+        FluidStack resource = new FluidStack(coolant, amountToDrain);
+
+        if (getOffsetTimer() % 40 == 0) {
+
+            FluidStack simulation = GTTransferUtils.drainFluidAccountNotifiableList(
+                    coolantHandler,
+                    resource,
+                    IFluidHandler.FluidAction.SIMULATE
+            );
+
+            if(simulation.isEmpty()) {
+                getRecipeLogic().interruptRecipe();
+                return false;
+            }
+
+            GTTransferUtils.drainFluidAccountNotifiableList(
+                    coolantHandler,
+                    resource,
+                    IFluidHandler.FluidAction.EXECUTE
+            );
+        }
+        return super.onWorking();
+    }
+
+    @Override
+    public boolean beforeWorking(@Nullable GTRecipe recipe) {
+
+        int amountToDrain = 1;
+        Fluid coolant = GreggyItems.DEIONIZED_WATER.getFluid();
+        FluidStack resource = new FluidStack(coolant, amountToDrain);
+
+        FluidStack simulation = GTTransferUtils.drainFluidAccountNotifiableList(
+                coolantHandler,
+                resource,
+                IFluidHandler.FluidAction.SIMULATE
+        );
+
+        if(simulation.isEmpty()) {
+            return false;
+        }
+
+        return super.beforeWorking(recipe);
     }
 
     private void checkCoil() {
@@ -129,22 +207,23 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
             .tooltips(Component.literal("The machine starts speeding up with the power of the magic remnants in the coils." +
                     " Depending on the coil, the machine speeds up faster. The coils tell you the exact amount of recipe time reduction.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
-            .tooltips(Component.literal("The power of the coils grow. Now they are able to double the output.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("The power of the coils grow. Now they are able to work in parallel, but due to the intense heat generated," +
+                    " they require ").withStyle(style -> style.withColor(0x90EE90)).append(Component.literal("1mb of Deionized Water per 40 ticks.").withStyle(style -> style.withColor(0xFF0000))))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("The machine only accepts 18 of the same coil. Do not mix them. After the machine forms, " +
                     "you can see activated Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
             .register();
 
     @Override
-    public void addDisplayText(List<Component> textList) {
+    public void addDisplayText(@NotNull List<Component> textList) {
         super.addDisplayText(textList);
 
         if (isFormed()) {
             textList.add(Component.translatable("Coil temperature: " + coilTemp + "K").withStyle(ChatFormatting.AQUA));
             switch (coilTemp){
-                case 7400 -> textList.add(Component.translatable("Recipes are shortened by 20% and the outputs are doubled." ).withStyle(ChatFormatting.GREEN));
-                case 9200 -> textList.add(Component.translatable("Recipes are shortened by 40% and the outputs are doubled.").withStyle(ChatFormatting.GREEN));
-                case 11000 -> textList.add(Component.translatable("Recipes are shortened by 60% and the outputs are doubled.").withStyle(ChatFormatting.GREEN));
+                case 7400 -> textList.add(Component.translatable("Recipes are shortened by 20% and     2 parallels are applied." ).withStyle(ChatFormatting.GREEN));
+                case 9200 -> textList.add(Component.translatable("Recipes are shortened by 40% and     2 parallels are applied.").withStyle(ChatFormatting.GREEN));
+                case 11000 -> textList.add(Component.translatable("Recipes are shortened by 60% and     4 parallels are applied.").withStyle(ChatFormatting.GREEN));
                 default -> textList.add(Component.translatable("Different coils detected!").withStyle(ChatFormatting.RED));
             }
         }

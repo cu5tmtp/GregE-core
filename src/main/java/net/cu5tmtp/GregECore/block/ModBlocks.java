@@ -49,14 +49,24 @@ public class ModBlocks {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
                     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-                    pTooltip.add(Component.translatable("tooltip.gregecore.manasteel_coil").withStyle(ChatFormatting.GREEN));
+                    pTooltip.add(Component.translatable("Coil temperature: ").withStyle(ChatFormatting.GREEN)
+                            .append(Component.literal("1800K").withStyle(ChatFormatting.GOLD))
+                    );
+                    pTooltip.add(Component.translatable("Coil recipe time reduction: ").withStyle(ChatFormatting.GREEN)
+                            .append(Component.literal("15%").withStyle(ChatFormatting.GOLD))
+                    );
                 }});
     public static final RegistryObject<Block> TWILIGHT_COIL =
             registerBlock("twilight_coil", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)){
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
                     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-                    pTooltip.add(Component.translatable("tooltip.gregecore.twilight_coil").withStyle(ChatFormatting.GREEN));
+                    pTooltip.add(Component.translatable("Coil temperature: ").withStyle(ChatFormatting.GREEN)
+                            .append(Component.literal("3600K").withStyle(ChatFormatting.GOLD))
+                    );
+                    pTooltip.add(Component.translatable("Coil recipe time reduction: ").withStyle(ChatFormatting.GREEN)
+                            .append(Component.literal("30%").withStyle(ChatFormatting.GOLD))
+                    );
                 }
             });
     public static final RegistryObject<Block> DESH_COIL =
@@ -64,7 +74,12 @@ public class ModBlocks {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
                     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-                    pTooltip.add(Component.translatable("tooltip.gregecore.desh_coil").withStyle(ChatFormatting.GREEN));
+                    pTooltip.add(Component.translatable("Coil temperature: ").withStyle(ChatFormatting.GREEN)
+                            .append(Component.literal("5400K").withStyle(ChatFormatting.GOLD))
+                    );
+                    pTooltip.add(Component.translatable("Coil recipe time reduction: ").withStyle(ChatFormatting.GREEN)
+                            .append(Component.literal("45%").withStyle(ChatFormatting.GOLD))
+                    );
                 }
             });
     public static final RegistryObject<Block> MALACHITE_COIL =
@@ -72,7 +87,16 @@ public class ModBlocks {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
                     super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-                    pTooltip.add(Component.translatable("tooltip.gregecore.malachite_coil").withStyle(ChatFormatting.GREEN));
+                    pTooltip.add(Component.translatable("Coil temperature: ").withStyle(ChatFormatting.GREEN)
+                                    .append(Component.literal("7400K").withStyle(ChatFormatting.GOLD))
+                    );
+                    pTooltip.add(Component.translatable("Coil recipe time reduction: ").withStyle(ChatFormatting.GREEN)
+                            .append(Component.literal("20%").withStyle(ChatFormatting.GOLD))
+                    );
+                    pTooltip.add(Component.translatable("Coil is able to do").withStyle(ChatFormatting.GREEN)
+                            .append(Component.literal(" 2").withStyle(ChatFormatting.GOLD))
+                            .append(Component.literal(" parallels.").withStyle(ChatFormatting.GREEN))
+                    );
                 }
             });
 

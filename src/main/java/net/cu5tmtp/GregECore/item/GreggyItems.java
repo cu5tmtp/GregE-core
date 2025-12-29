@@ -1,14 +1,13 @@
 package net.cu5tmtp.GregECore.item;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
-import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlag;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 
 public class GreggyItems {
     public static Material MYTHRIL, NOBELIUM, FRANKLINITE;
-    public static Material MOLTEN_MYTHRIL, MOLTEN_FRANKLINITE;
+    public static Material MOLTEN_MYTHRIL, MOLTEN_FRANKLINITE, DEIONIZED_WATER;
     public static void register(){
         //items
         MYTHRIL = new Material.Builder(GregECore.id("mythril"))
@@ -42,6 +41,13 @@ public class GreggyItems {
         MOLTEN_FRANKLINITE = new Material.Builder(GregECore.id("molten_franklinite"))
                 .fluid()
                 .color(0x964B00)
+                .iconSet(MaterialIconSet.FLUID)
+                .flags(MaterialFlags.DISABLE_DECOMPOSITION)
+                .buildAndRegister();
+
+        DEIONIZED_WATER = new Material.Builder(GregECore.id("deionized_water"))
+                .fluid()
+                .color(0xdddddd)
                 .iconSet(MaterialIconSet.FLUID)
                 .flags(MaterialFlags.DISABLE_DECOMPOSITION)
                 .buildAndRegister();
