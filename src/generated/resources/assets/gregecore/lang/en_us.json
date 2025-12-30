@@ -2,6 +2,8 @@
   "block.gregecore.acceleratedebf": "§lAccelerated EBF§g",
   "block.gregecore.giantacceleratedebf": "§lGiant Accelerated EBF§g",
   "block.gregecore.giantchr": "§lGiant Chemical Reactor§g",
+  "block.gregecore.dysonswarmenergycollector": "§lDyson Swarm Energy Collector§g",
+  "block.gregecore.dysonswarmlauncher": "§lDyson Swarm Launcher§g",
 
   "block.gregecore.manasteel_coil": "Manasteel Coil",
   "block.gregecore.twilight_coil": "Twilight Coil",
@@ -10,6 +12,9 @@
   "item.gregecore.energy_bacteria": "Energy Bacteria",
   "item.gregecore.parallel_bacteria": "Parallel Bacteria",
   "item.gregecore.speed_bacteria": "Speed Bacteria",
+  "item.gregecore.solar_sail": "Solar Sail",
+  "item.gregecore.solar_sail_case": "Solar Sail Case",
+  "item.gregecore.solar_activator": "Solar Activator",
 
   "material.gregecore.franklinite": "Franklinite",
   "material.gregecore.mythril": "Mythril",

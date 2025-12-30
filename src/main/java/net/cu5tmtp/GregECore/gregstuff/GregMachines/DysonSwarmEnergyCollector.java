@@ -1,0 +1,94 @@
+package net.cu5tmtp.GregECore.gregstuff.GregMachines;
+
+import com.gregtechceu.gtceu.GTCEu;
+import com.gregtechceu.gtceu.api.data.RotationState;
+import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
+import com.gregtechceu.gtceu.api.machine.MachineDefinition;
+import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
+import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
+import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
+import com.gregtechceu.gtceu.api.pattern.Predicates;
+import com.gregtechceu.gtceu.api.recipe.GTRecipe;
+import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
+import com.gregtechceu.gtceu.common.data.GCYMBlocks;
+import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
+import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.managers.DysonSwarmManager;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregEModifiers;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregERecipeTypes;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+
+import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
+import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
+import static net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore.REGISTRATE;
+
+public class DysonSwarmEnergyCollector extends WorkableElectricMultiblockMachine {
+    public DysonSwarmEnergyCollector(IMachineBlockEntity holder, Object... args) {
+        super(holder, args);
+    }
+
+        public static MachineDefinition DYSON_SWARM_LAUNCHER = REGISTRATE
+            .multiblock("dysonswarmenergycollector", DysonSwarmEnergyCollector::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeTypes(GregERecipeTypes.GET_SOLAR_SAIL_ENERGY)
+            .recipeModifiers(GregEModifiers::dysonSwarmGenBoost)
+            .appearanceBlock(COMPUTER_CASING)
+            .pattern(definition -> {
+                return FactoryBlockPattern.start()
+                        .aisle("FFFFFFFFFFF", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ")
+                        .aisle("FFFFFFFFFFF", "           ", "           ", "           ", "           ", "           ", "           ", "   IIIII   ", "           ", "           ", "           ", "           ", "           ", "           ")
+                        .aisle("FFFFFFFFFFF", "           ", "           ", "           ", "           ", "           ", "   IIIII   ", "  IJ   JI  ", "   J   J   ", "           ", "           ", "           ", "           ", "           ")
+                        .aisle("FFFFFFFFFFF", "    HHH    ", "     H     ", "     H     ", "    HHH    ", "    III    ", "   I   I   ", "  I     I  ", "           ", "    J J    ", "           ", "           ", "           ", "           ")
+                        .aisle("FFFFFFFFFFF", "    HGGGG  ", "    HGH    ", "    HGH    ", "    HGH    ", "    IGI    ", "   I J I   ", "  I  J  I  ", "     J     ", "     J     ", "     J     ", "     J     ", "     J     ", "     K     ")
+                        .aisle("FFFFFFFFFFF", "    HHH G  ", "     H     ", "     H     ", "    HHH    ", "    III    ", "   I   I   ", "  I     I  ", "           ", "    J J    ", "           ", "           ", "           ", "           ")
+                        .aisle("FFFFFFFFFFF", "        G  ", "           ", "           ", "           ", "           ", "   IIIII   ", "  IJ   JI  ", "   J   J   ", "           ", "           ", "           ", "           ", "           ")
+                        .aisle("FFFFFFFFFFF", " BEEEB LGL ", " BEEEB LLL ", " BEEEB     ", " BBBBB     ", "           ", "           ", "   IIIII   ", "           ", "           ", "           ", "           ", "           ", "           ")
+                        .aisle("FFFFFFFFFFF", " BDDDB LLL ", " BACCB LLL ", " BCCCB     ", " BBBBB     ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ")
+                        .aisle("FFFFFFFFFFF", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ", "           ")
+                        .where('A', Predicates.controller(blocks(definition.getBlock())))
+                        .where('B', Predicates.blocks(COMPUTER_CASING.get())
+                                .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+                                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2))
+                                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(2)))
+                        .where('C', Predicates.blocks(ADVANCED_COMPUTER_CASING.get()))
+                        .where('D', Predicates.blocks(HIGH_POWER_CASING.get()))
+                        .where('E', Predicates.blocks(COMPUTER_HEAT_VENT.get()))
+                        .where('F', Predicates.blocks(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING.get()))
+                        .where('G', Predicates.blocks(CASING_STEEL_GEARBOX.get()))
+                        .where('H', Predicates.blocks(GCYMBlocks.CASING_STRESS_PROOF.get()))
+                        .where('I', Predicates.blocks(GCYMBlocks.CASING_SECURE_MACERATION.get()))
+                        .where('J', Predicates.blocks(CASING_PTFE_INERT.get()))
+                        .where('K', Predicates.blocks(GCYMBlocks.MOLYBDENUM_DISILICIDE_COIL_BLOCK.get()))
+                        .where('L', Predicates.blocks(COMPUTER_CASING.get())
+                                .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY).setMaxGlobalLimited(8)).setPreviewCount(8))
+                        .where(' ', Predicates.any())
+                        .build();
+            })
+            .workableCasingModel(GTCEu.id("block/casings/hpca/computer_casing/front"),
+                    GTCEu.id("block/multiblock/fusion_reactor"))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("Abilities: Dyson Swarm Energy Collector").withStyle(style -> style.withColor(0xFFD700)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("This machine collects the energy reflected from the solar sails, " +
+                    "boosted by the amount of the launched solar sails.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("The breakpoints are: 50000, 150000, 500000 sails in space.").withStyle(style -> style.withColor(0x90EE90)))
+            .register();
+
+    @Override
+    public void addDisplayText(@NotNull List<Component> textList) {
+        super.addDisplayText(textList);
+        if (isFormed()) {
+            textList.add(Component.translatable("Energy generation boost: " + (int) DysonSwarmManager.getBoost()).withStyle(ChatFormatting.AQUA));
+        }
+    }
+
+    public static void init() {}
+}

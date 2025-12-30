@@ -1,12 +1,18 @@
-// 1.20.1	2025-12-30T02:03:43.1131654	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2025-12-30T23:46:43.3651519	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 b3c78504318281555d96db9c7eab46d9091cf7bc assets/gregecore/blockstates/acceleratedebf.json
+4acb5f34d5cb39be6d717b25f2b285518421feea assets/gregecore/blockstates/dysonswarmenergycollector.json
+4f2b4889da1bc77fbb01045b6cc718cf6f465579 assets/gregecore/blockstates/dysonswarmlauncher.json
 01debd1f715479fc162486cc4620f189df521e2e assets/gregecore/blockstates/giantacceleratedebf.json
 1ae3ca08c6e27bc3953f07e2df79eceff40ed203 assets/gregecore/blockstates/giantchr.json
-e7b64ae3ae62f626e6c70c58fea06e6f933b4cd3 assets/gregecore/lang/en_ud.json
-423abfe1f4d0878cf14466861d70771c8be1ee1c assets/gregecore/lang/en_us.json
+c46e47444c7d903a2ab092031322fd0fe12b9452 assets/gregecore/lang/en_ud.json
+c86ac486267b841ced0d6c51dfd8cc5403411f1b assets/gregecore/lang/en_us.json
 fea4368454b99832d361890c89a0560cfb9aede1 assets/gregecore/models/block/machine/acceleratedebf.json
+595cb1fffd6fd98e836ee02c15631330fcdff000 assets/gregecore/models/block/machine/dysonswarmenergycollector.json
+41b900a2b1b16ce1af3314b529e243d24ceb42c2 assets/gregecore/models/block/machine/dysonswarmlauncher.json
 a469d923f7f9582a84352686aae72373f9539205 assets/gregecore/models/block/machine/giantacceleratedebf.json
 3c8b321be9ff8d37cbc1847516539db8c330a4cc assets/gregecore/models/block/machine/giantchr.json
 2608050db5422140ce9f9829c8ad525c49af819d assets/gregecore/models/item/acceleratedebf.json
+a27b515e873c9531e2f679d4a6351fbc3f5903bf assets/gregecore/models/item/dysonswarmenergycollector.json
+229d1251f9a000b6206da87bffa09bfd4eef11f3 assets/gregecore/models/item/dysonswarmlauncher.json
 9272526de3a4d31b124064fad01d64e6344fcc71 assets/gregecore/models/item/giantacceleratedebf.json
 be1797a4eca45df31dbeaf2c2dcd738e6436abe2 assets/gregecore/models/item/giantchr.json

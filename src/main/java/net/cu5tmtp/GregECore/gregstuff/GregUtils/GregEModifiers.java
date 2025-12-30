@@ -7,8 +7,10 @@ import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.AcceleratedEBF;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.DysonSwarmLauncher;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.GiantAcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.GiantChemicalReactor;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.managers.DysonSwarmManager;
 
 public class GregEModifiers {
 
@@ -101,6 +103,17 @@ public class GregEModifiers {
                 .parallels(parallelsAvailableGCR)
                 .build();
 
+    }
+
+    public static ModifierFunction dysonSwarmGenBoost(MetaMachine machine, GTRecipe recipe){
+
+        if (!(machine instanceof DysonSwarmLauncher ds)) {
+            return ModifierFunction.NULL;
+        }
+
+        return ModifierFunction.builder()
+                .eutMultiplier(DysonSwarmManager.getBoost())
+                .build();
     }
 }
 

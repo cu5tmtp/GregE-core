@@ -1,9 +1,7 @@
 package net.cu5tmtp.GregECore.gregstuff.GregUtils;
 
 import net.cu5tmtp.GregECore.block.ModBlocks;
-import net.cu5tmtp.GregECore.gregstuff.GregMachines.AcceleratedEBF;
-import net.cu5tmtp.GregECore.gregstuff.GregMachines.GiantAcceleratedEBF;
-import net.cu5tmtp.GregECore.gregstuff.GregMachines.GiantChemicalReactor;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.*;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 import net.cu5tmtp.GregECore.item.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -26,9 +24,14 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ENERGY_BACTERIA.get());
                         pOutput.accept(ModItems.SPEED_BACTERIA.get());
                         pOutput.accept(ModItems.PARALLEL_BACTERIA.get());
+                        pOutput.accept(ModItems.SOLAR_ACTIVATOR.get());
+                        pOutput.accept(ModItems.SOLAR_SAIL.get());
+                        pOutput.accept(ModItems.SOLAR_SAIL_CASE.get());
                         pOutput.accept(AcceleratedEBF.ACCELERATEDEBF.getItem());
                         pOutput.accept(GiantAcceleratedEBF.GIANTACCELERATEDEBF.getItem());
                         pOutput.accept(GiantChemicalReactor.GIANTCHR.getItem());
+                        pOutput.accept(DysonSwarmLauncher.DYSON_SWARM_LAUNCHER.getItem());
+                        pOutput.accept(DysonSwarmEnergyCollector.DYSON_SWARM_LAUNCHER.getItem());
                     })
                     .build());
 

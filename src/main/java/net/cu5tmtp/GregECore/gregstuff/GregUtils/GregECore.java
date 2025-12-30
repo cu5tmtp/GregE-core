@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
+import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.mojang.logging.LogUtils;
 import net.cu5tmtp.GregECore.block.ModBlocks;
@@ -39,6 +40,7 @@ public class GregECore {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
 
+        modEventBus.addGenericListener(GTRecipeType.class, this::registerGregERecipeTypes);
         modEventBus.addGenericListener(MachineDefinition.class, this::registerMachines);
 
         modEventBus.addListener(this::commonSetup);
@@ -51,16 +53,19 @@ public class GregECore {
         return new ResourceLocation(MOD_ID, path);
     }
 
+    private void registerGregERecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
+        GregERecipeTypes.init();
+    }
+
+    private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
+        GregEStuffInit.initGregEMulti();
+    }
     private void addMaterialRegistries(MaterialRegistryEvent event) {
         GTCEuAPI.materialManager.createRegistry(MOD_ID);
     }
 
     private void addMaterials(MaterialEvent event) {
         GreggyItems.register();
-    }
-
-    private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        GregEStuffInit.initGregEMulti();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
