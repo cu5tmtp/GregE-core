@@ -1,10 +1,14 @@
 {
   "block.gregecore.acceleratedebf": "ɟqǝpǝʇɐɹǝןǝɔɔⱯ",
   "block.gregecore.giantacceleratedebf": "ɟqǝpǝʇɐɹǝןǝɔɔɐʇuɐı⅁",
+  "block.gregecore.giantchr": "ɹɥɔʇuɐı⅁",
   "material.gregecore.deionized_water": "ɹǝʇɐM pǝzıuoıǝᗡ",
   "material.gregecore.franklinite": "ǝʇıuıןʞuɐɹℲ",
+  "material.gregecore.lithium_amalgamation": "uoıʇɐɯɐbןɐɯⱯ ɯnıɥʇıꞀ",
+  "material.gregecore.lithium_hydroxide": "ǝpıxoɹpʎH ɯnıɥʇıꞀ",
   "material.gregecore.molten_franklinite": "ǝʇıuıןʞuɐɹℲ uǝʇןoW",
   "material.gregecore.molten_mythril": "ןıɹɥʇʎW uǝʇןoW",
   "material.gregecore.mythril": "ןıɹɥʇʎW",
-  "material.gregecore.nobelium": "ɯnıןǝqoN"
+  "material.gregecore.nobelium": "ɯnıןǝqoN",
+  "material.gregecore.plutonium_hexafluoride": "ǝpıɹonןɟɐxǝH ɯnıuoʇnןԀ"
 }

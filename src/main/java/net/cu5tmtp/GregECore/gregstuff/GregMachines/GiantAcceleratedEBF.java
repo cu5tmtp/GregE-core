@@ -104,6 +104,7 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
     @Override
     public boolean beforeWorking(@Nullable GTRecipe recipe) {
 
+        //Check if input hatches have enough coolant
         int amountToDrain = 1;
         Fluid coolant = GreggyItems.DEIONIZED_WATER.getFluid();
         FluidStack resource = new FluidStack(coolant, amountToDrain);
@@ -122,6 +123,8 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
     }
 
     private void checkCoil() {
+
+        //Check is coils are the same
         Level level = getLevel();
         if (level == null || level.isClientSide) return;
 

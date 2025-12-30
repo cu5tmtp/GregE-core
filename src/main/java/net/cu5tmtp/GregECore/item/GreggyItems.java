@@ -6,7 +6,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 
 public class GreggyItems {
-    public static Material MYTHRIL, NOBELIUM, FRANKLINITE;
+    public static Material MYTHRIL, NOBELIUM, FRANKLINITE, LITHIUM_HYDROXIDE, LITHIUM_AMALGAMATION, PLUTONIUM_HEXAFLUORIDE;
     public static Material MOLTEN_MYTHRIL, MOLTEN_FRANKLINITE, DEIONIZED_WATER;
     public static void register(){
         //items
@@ -27,6 +27,21 @@ public class GreggyItems {
                 .ingot()
                 .color(0x964B00)
                 .iconSet(MaterialIconSet.ROUGH)
+                .buildAndRegister();
+
+        LITHIUM_HYDROXIDE = new Material.Builder(GregECore.id("lithium_hydroxide"))
+                .dust()
+                .color(0x7393B3)
+                .buildAndRegister();
+
+        LITHIUM_AMALGAMATION = new Material.Builder(GregECore.id("lithium_amalgamation"))
+                .dust()
+                .color(0x739FF3)
+                .buildAndRegister();
+
+        PLUTONIUM_HEXAFLUORIDE = new Material.Builder(GregECore.id("plutonium_hexafluoride"))
+                .dust()
+                .color(0x141414)
                 .buildAndRegister();
 
         //fluids

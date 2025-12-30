@@ -8,6 +8,7 @@ import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.AcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.GiantAcceleratedEBF;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.GiantChemicalReactor;
 
 public class GregEModifiers {
 
@@ -83,6 +84,23 @@ public class GregEModifiers {
                     .build();
         }
         return ModifierFunction.IDENTITY;
+    }
+
+    public static ModifierFunction giantChemicalReactor(MetaMachine machine, GTRecipe recipe){
+
+        if (!(machine instanceof GiantChemicalReactor gcr)) {
+            return ModifierFunction.NULL;
+        }
+
+        int parallelsAvailableGCR = Math.max(0, ParallelLogic.getParallelAmountFast(machine, recipe, gcr.parallelBoost));
+
+        return ModifierFunction.builder()
+                .modifyAllContents(ContentModifier.multiplier(parallelsAvailableGCR))
+                .eutMultiplier(gcr.energyBoost)
+                .durationMultiplier(gcr.speedBoost)
+                .parallels(parallelsAvailableGCR)
+                .build();
+
     }
 }
 

@@ -1,15 +1,22 @@
 {
   "block.gregecore.acceleratedebf": "§lAccelerated EBF§g",
   "block.gregecore.giantacceleratedebf": "§lGiant Accelerated EBF§g",
+  "block.gregecore.giantchr": "§lGiant Chemical Reactor§g",
 
   "block.gregecore.manasteel_coil": "Manasteel Coil",
   "block.gregecore.twilight_coil": "Twilight Coil",
   "block.gregecore.desh_coil": "Desh Coil",
   "block.gregecore.malachite_coil": "Malachite Coil",
+  "item.gregecore.energy_bacteria": "Energy Bacteria",
+  "item.gregecore.parallel_bacteria": "Parallel Bacteria",
+  "item.gregecore.speed_bacteria": "Speed Bacteria",
 
   "material.gregecore.franklinite": "Franklinite",
   "material.gregecore.mythril": "Mythril",
   "material.gregecore.nobelium": "Nobelium",
+  "material.gregecore.lithium_amalgamation": "Lithium Amalgamation",
+  "material.gregecore.lithium_hydroxide": "Lithium Hydroxide",
+  "material.gregecore.plutonium_hexafluoride": "Plutonium Hexafluoride",
 
   "material.gregecore.deionized_water": "Deionized Water",
   "material.gregecore.molten_franklinite": "Molten Franklinite",
