@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "gregecore:block/itemtranslocator" },
-    "facing=south": { "model": "gregecore:block/itemtranslocator", "y": 180 },
-    "facing=west":  { "model": "gregecore:block/itemtranslocator", "y": 270 },
-    "facing=east":  { "model": "gregecore:block/itemtranslocator", "y": 90 }
-  }
-}

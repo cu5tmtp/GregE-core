@@ -5,10 +5,14 @@
   "block.gregecore.dysonswarmenergycollector": "§lDyson Swarm Energy Collector§g",
   "block.gregecore.dysonswarmlauncher": "§lDyson Swarm Launcher§g",
 
+  "block.gregecore.linearaccelerator": "Linear Accelerator",
+  "block.gregecore.conveyorbelt": "Conveyor Belt",
+  "block.gregecore.itemtranslocator": "Chute",
+  "block.gregecore.malachite_coil": "Malachite Coil",
   "block.gregecore.manasteel_coil": "Manasteel Coil",
   "block.gregecore.twilight_coil": "Twilight Coil",
   "block.gregecore.desh_coil": "Desh Coil",
-  "block.gregecore.malachite_coil": "Malachite Coil",
+
   "item.gregecore.energy_bacteria": "Energy Bacteria",
   "item.gregecore.parallel_bacteria": "Parallel Bacteria",
   "item.gregecore.speed_bacteria": "Speed Bacteria",
@@ -25,9 +29,5 @@
 
   "material.gregecore.deionized_water": "Deionized Water",
   "material.gregecore.molten_franklinite": "Molten Franklinite",
-  "material.gregecore.molten_mythril": "Molten Mythril",
-
-  "block.gregecore.linearaccelerator": "Linear Accelerator",
-  "block.gregecore.conveyorbelt": "Conveyor Belt",
-  "block.gregecore.itemtranslocator": "Chute"
+  "material.gregecore.molten_mythril": "Molten Mythril"
 }

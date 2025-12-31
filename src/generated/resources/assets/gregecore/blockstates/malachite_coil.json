@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "gregecore:block/malachite_coil"
+    },
+    "active=true": {
+      "model": "gregecore:block/malachite_coil_active"
+    }
+  }
+}

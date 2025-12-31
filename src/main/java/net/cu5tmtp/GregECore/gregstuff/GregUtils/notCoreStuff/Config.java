@@ -1,5 +1,6 @@
-package net.cu5tmtp.GregECore.gregstuff.GregUtils;
+package net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff;
 
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeConfigSpec;

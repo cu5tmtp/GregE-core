@@ -1,4 +1,4 @@
-package net.cu5tmtp.GregECore.gregstuff.GregUtils;
+package net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff;
 
 import net.cu5tmtp.GregECore.block.ModBlocks;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.*;

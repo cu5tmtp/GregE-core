@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "gregecore:block/twilight_coil"
+    },
+    "active=true": {
+      "model": "gregecore:block/twilight_coil_active"
+    }
+  }
+}

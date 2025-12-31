@@ -10,24 +10,17 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.common.data.GCYMBlocks;
-import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
-import com.mojang.logging.LogUtils;
-import mezz.jei.api.recipe.RecipeType;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.managers.DysonSwarmManager;
-import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregERecipeTypes;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregERecipeTypes;
 import net.minecraft.ChatFormatting;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.slf4j.Logger;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
@@ -107,7 +100,7 @@ public class DysonSwarmLauncher extends WorkableElectricMultiblockMachine {
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("Abilities: Dyson Swarm Launcher").withStyle(style -> style.withColor(0xFFD700)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
-            .tooltips(Component.literal("This machine launches solar sails into the sun orbit. Depending on the number of them, " +
+            .tooltips(Component.literal("This machine launches solar sails into the sun orbit. Depending on the number of launched sails, " +
                     "various boosts are given to Dyson Swarm Energy Collector.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("The breakpoints are: 500 -> 1x, 50000 -> 5x, 150000 -> 50x, 500000 -> 500x.").withStyle(style -> style.withColor(0x90EE90)))

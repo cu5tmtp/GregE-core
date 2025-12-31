@@ -1,4 +1,4 @@
-package net.cu5tmtp.GregECore.gregstuff.GregUtils;
+package net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;

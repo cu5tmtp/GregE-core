@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.KJSRecipeKeyEvent;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import net.cu5tmtp.GregECore.block.GreggyBlocks;
 import net.minecraft.data.recipes.FinishedRecipe;
 import java.util.function.Consumer;
 
@@ -18,6 +19,7 @@ public class GregEGTAddon implements IGTAddon {
 
     @Override
     public void initializeAddon() {
+        GreggyBlocks.init();
     }
 
     @Override
