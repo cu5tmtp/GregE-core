@@ -225,8 +225,8 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
             textList.add(Component.translatable("Coil temperature: " + coilTemp + "K").withStyle(ChatFormatting.AQUA));
             switch (coilTemp){
                 case 7400 -> textList.add(Component.translatable("Recipes are shortened by 20% and     2 parallels are applied." ).withStyle(ChatFormatting.GREEN));
-                case 9200 -> textList.add(Component.translatable("Recipes are shortened by 40% and     2 parallels are applied.").withStyle(ChatFormatting.GREEN));
-                case 11000 -> textList.add(Component.translatable("Recipes are shortened by 60% and     4 parallels are applied.").withStyle(ChatFormatting.GREEN));
+                case 9200 -> textList.add(Component.translatable("Recipes are shortened by 40% and     4 parallels are applied.").withStyle(ChatFormatting.GREEN));
+                case 11000 -> textList.add(Component.translatable("Recipes are shortened by 60% and     8 parallels are applied.").withStyle(ChatFormatting.GREEN));
                 default -> textList.add(Component.translatable("Different coils detected!").withStyle(ChatFormatting.RED));
             }
         }

@@ -4,8 +4,6 @@
   "block.gregecore.giantchr": "§lGiant Chemical Reactor§g",
   "block.gregecore.dysonswarmenergycollector": "§lDyson Swarm Energy Collector§g",
   "block.gregecore.dysonswarmlauncher": "§lDyson Swarm Launcher§g",
-  "gtceu.launch_sails": "Launch Sails",
-  "gtceu.get_solar_sail_energy": "Energy From Solar Sails",
 
   "block.gregecore.linearaccelerator": "Linear Accelerator",
   "block.gregecore.conveyorbelt": "Conveyor Belt",
@@ -14,6 +12,7 @@
   "block.gregecore.manasteel_coil": "Manasteel Coil",
   "block.gregecore.twilight_coil": "Twilight Coil",
   "block.gregecore.desh_coil": "Desh Coil",
+  "block.gregecore.ptfe_engine_intake": "PTFE Engine Intake",
 
   "item.gregecore.energy_bacteria": "Energy Bacteria",
   "item.gregecore.parallel_bacteria": "Parallel Bacteria",

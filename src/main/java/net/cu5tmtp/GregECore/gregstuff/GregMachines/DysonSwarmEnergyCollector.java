@@ -60,7 +60,7 @@ public class DysonSwarmEnergyCollector extends WorkableElectricMultiblockMachine
                         .where('J', Predicates.blocks(CASING_PTFE_INERT.get()))
                         .where('K', Predicates.blocks(GCYMBlocks.MOLYBDENUM_DISILICIDE_COIL_BLOCK.get()))
                         .where('L', Predicates.blocks(COMPUTER_CASING.get())
-                                .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY).setMaxGlobalLimited(8)).setPreviewCount(8))
+                                .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY).setMaxGlobalLimited(11).setPreviewCount(11)))
                         .where(' ', Predicates.any())
                         .build();
             })
