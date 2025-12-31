@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "gregecore:block/linearaccelerator" },
+    "facing=south": { "model": "gregecore:block/linearaccelerator", "y": 180 },
+    "facing=west":  { "model": "gregecore:block/linearaccelerator", "y": 270 },
+    "facing=east":  { "model": "gregecore:block/linearaccelerator", "y": 90 }
+  }
+}

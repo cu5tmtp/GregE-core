@@ -13,6 +13,8 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import static net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore.REGISTRATE;
 
 public class GreggyBlocks {
+
+    //Thanks to StarT core for teaching me how to do this
     protected static BlockEntry<ActiveBlock> createActiveCoil(String name, ResourceLocation baseTexture) {
         return REGISTRATE.block(name, ActiveBlock::new)
                 .initialProperties(() -> Blocks.IRON_BLOCK)

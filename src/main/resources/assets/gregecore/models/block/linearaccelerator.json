@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "minecraft:block/iron_block",
+    "down": "gregecore:block/accelrest",
+    "up": "gregecore:block/accelrest",
+    "north": "gregecore:block/accelrest",
+    "south": "gregecore:block/accelrest",
+    "east": "gregecore:block/accelside",
+    "west": "gregecore:block/accelside"
+  }
+}

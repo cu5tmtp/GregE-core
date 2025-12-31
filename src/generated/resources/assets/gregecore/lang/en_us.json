@@ -4,6 +4,8 @@
   "block.gregecore.giantchr": "§lGiant Chemical Reactor§g",
   "block.gregecore.dysonswarmenergycollector": "§lDyson Swarm Energy Collector§g",
   "block.gregecore.dysonswarmlauncher": "§lDyson Swarm Launcher§g",
+  "gtceu.launch_sails": "Launch Sails",
+  "gtceu.get_solar_sail_energy": "Energy From Solar Sails",
 
   "block.gregecore.linearaccelerator": "Linear Accelerator",
   "block.gregecore.conveyorbelt": "Conveyor Belt",
@@ -17,7 +19,7 @@
   "item.gregecore.parallel_bacteria": "Parallel Bacteria",
   "item.gregecore.speed_bacteria": "Speed Bacteria",
   "item.gregecore.solar_sail": "Solar Sail",
-  "item.gregecore.solar_sail_case": "Solar Sail Case",
+  "item.gregecore.solar_sail_case": "Solar Sail Empty Case",
   "item.gregecore.solar_activator": "Solar Activator",
 
   "material.gregecore.franklinite": "Franklinite",
