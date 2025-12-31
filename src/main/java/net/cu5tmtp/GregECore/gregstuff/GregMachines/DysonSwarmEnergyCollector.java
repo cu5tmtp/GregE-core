@@ -79,7 +79,7 @@ public class DysonSwarmEnergyCollector extends WorkableElectricMultiblockMachine
             .tooltips(Component.literal("This machine collects the energy reflected from the solar sails, " +
                     "boosted by the amount of the launched solar sails.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
-            .tooltips(Component.literal("The breakpoints are: 50000, 150000, 500000 sails in space.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("The breakpoints are: 500 -> 1x, 50000 -> 5x, 150000 -> 50x, 500000 -> 500x.").withStyle(style -> style.withColor(0x90EE90)))
             .register();
 
     @Override

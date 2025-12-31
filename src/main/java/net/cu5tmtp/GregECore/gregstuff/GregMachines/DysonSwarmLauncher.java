@@ -12,16 +12,22 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.common.data.GCYMBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
+import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
+import com.mojang.logging.LogUtils;
 import mezz.jei.api.recipe.RecipeType;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.managers.DysonSwarmManager;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregERecipeTypes;
 import net.minecraft.ChatFormatting;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
@@ -33,8 +39,17 @@ public class DysonSwarmLauncher extends WorkableElectricMultiblockMachine {
         super(holder, args);
     }
 
+    protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
+            DysonSwarmLauncher.class,
+            WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER
+    );
     @Persisted
-    private double sailsShot = 0;
+    protected double sailsShot = 0;
+
+    @Override
+    public ManagedFieldHolder getFieldHolder() {
+        return MANAGED_FIELD_HOLDER;
+    }
 
     @Override
     public void onLoad() {
@@ -46,6 +61,7 @@ public class DysonSwarmLauncher extends WorkableElectricMultiblockMachine {
     public boolean beforeWorking(@Nullable GTRecipe recipe) {
         DysonSwarmManager.addSail();
         sailsShot++;
+        this.markAsDirty();
         return super.beforeWorking(recipe);
     }
 
@@ -94,7 +110,7 @@ public class DysonSwarmLauncher extends WorkableElectricMultiblockMachine {
             .tooltips(Component.literal("This machine launches solar sails into the sun orbit. Depending on the number of them, " +
                     "various boosts are given to Dyson Swarm Energy Collector.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
-            .tooltips(Component.literal("The breakpoints are: 50000, 150000, 500000 sails in space.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("The breakpoints are: 500 -> 1x, 50000 -> 5x, 150000 -> 50x, 500000 -> 500x.").withStyle(style -> style.withColor(0x90EE90)))
             .register();
 
     @Override
