@@ -13,6 +13,7 @@
   "block.gregecore.twilight_coil": "Twilight Coil",
   "block.gregecore.desh_coil": "Desh Coil",
   "block.gregecore.ptfe_engine_intake": "PTFE Engine Intake",
+  "block.gregecore.vibration_engine_intake": "Vibration Engine Intake",
 
   "item.gregecore.energy_bacteria": "Energy Bacteria",
   "item.gregecore.parallel_bacteria": "Parallel Bacteria",
@@ -30,5 +31,14 @@
 
   "material.gregecore.deionized_water": "Deionized Water",
   "material.gregecore.molten_franklinite": "Molten Franklinite",
-  "material.gregecore.molten_mythril": "Molten Mythril"
+  "material.gregecore.molten_mythril": "Molten Mythril",
+
+  "material.gregecore.quadractik_gas": "Quadractik Gas",
+  "material.gregecore.quenzin": "Quenzin Gas",
+  "material.gregecore.verci_54": "Verci-54 Gas",
+  "material.gregecore.xenozene_gas": "Xenozene Gas",
+  "material.gregecore.nobalureium_gas": "Nobalureium Gas",
+  "material.gregecore.manopered_36": "Manopered 36",
+  "material.gregecore.jelenogas_gas": "Jelenogas Gas",
+  "material.gregecore.superheated_solar": "Superheated Solar Plasma"
 }

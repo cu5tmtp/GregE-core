@@ -15,7 +15,7 @@ import static net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore.REGISTRATE;
 public class GreggyBlocks {
 
     //Thanks to StarT core for teaching me how to do this
-    protected static BlockEntry<ActiveBlock> createActiveCoil(String name, ResourceLocation baseTexture) {
+    protected static BlockEntry<ActiveBlock> createActiveBlock(String name, ResourceLocation baseTexture) {
         return REGISTRATE.block(name, ActiveBlock::new)
                 .initialProperties(() -> Blocks.IRON_BLOCK)
                 .addLayer(() -> RenderType::cutoutMipped)
@@ -36,20 +36,23 @@ public class GreggyBlocks {
                 .register();
     }
 
-    public static final BlockEntry<ActiveBlock> MANASTEEL_COIL = createActiveCoil("manasteel_coil",
+    public static final BlockEntry<ActiveBlock> MANASTEEL_COIL = createActiveBlock("manasteel_coil",
             GregECore.id("block/coils/machine_coil_manasteel"));
 
-    public static final BlockEntry<ActiveBlock> TWILIGHT_COIL = createActiveCoil("twilight_coil",
+    public static final BlockEntry<ActiveBlock> TWILIGHT_COIL = createActiveBlock("twilight_coil",
             GregECore.id("block/coils/machine_coil_twilight"));
 
-    public static final BlockEntry<ActiveBlock> DESH_COIL = createActiveCoil("desh_coil",
+    public static final BlockEntry<ActiveBlock> DESH_COIL = createActiveBlock("desh_coil",
             GregECore.id("block/coils/machine_coil_desh"));
 
-    public static final BlockEntry<ActiveBlock> MALACHITE_COIL = createActiveCoil("malachite_coil",
+    public static final BlockEntry<ActiveBlock> MALACHITE_COIL = createActiveBlock("malachite_coil",
             GregECore.id("block/coils/machine_coil_malachite"));
 
-    public static final BlockEntry<ActiveBlock> PTFE_ENGINE_INTAKE = createActiveCoil("ptfe_engine_intake",
+    public static final BlockEntry<ActiveBlock> PTFE_ENGINE_INTAKE = createActiveBlock("ptfe_engine_intake",
             GregECore.id("block/engines/ptfe_engine_intake"));
+
+    public static final BlockEntry<ActiveBlock> VIBRATION_ENGINE_INTAKE = createActiveBlock("vibration_engine_intake",
+            GregECore.id("block/engines/vibration_engine_intake"));
 
     public static final void init(){}
 }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "gregecore:block/vibration_engine_intake"
+    },
+    "active=true": {
+      "model": "gregecore:block/vibration_engine_intake_active"
+    }
+  }
+}

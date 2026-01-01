@@ -7,7 +7,17 @@ import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 
 public class GreggyItems {
     public static Material MYTHRIL, NOBELIUM, FRANKLINITE, LITHIUM_HYDROXIDE, LITHIUM_AMALGAMATION, PLUTONIUM_HEXAFLUORIDE;
-    public static Material MOLTEN_MYTHRIL, MOLTEN_FRANKLINITE, DEIONIZED_WATER;
+    public static Material MOLTEN_MYTHRIL, MOLTEN_FRANKLINITE, DEIONIZED_WATER, XENOZENE, NOBARULEIUM, QUDRACTIK, JELENOGAS, VERCI_54, MANOPERED_36, QUENZIN;
+
+    public static Material buildFluidMaterial(String name, int color) {
+        return new Material.Builder(GregECore.id(name))
+                .fluid()
+                .color(color)
+                .iconSet(MaterialIconSet.FLUID)
+                .flags(MaterialFlags.DISABLE_DECOMPOSITION)
+                .buildAndRegister();
+    }
+
     public static void register(){
         //items
         MYTHRIL = new Material.Builder(GregECore.id("mythril"))
@@ -45,26 +55,22 @@ public class GreggyItems {
                 .buildAndRegister();
 
         //fluids
-
-        MOLTEN_MYTHRIL = new Material.Builder(GregECore.id("molten_mythril"))
-                .fluid()
-                .color(0x63A2B0)
-                .iconSet(MaterialIconSet.FLUID)
-                .flags(MaterialFlags.DISABLE_DECOMPOSITION)
-                .buildAndRegister();
-
-        MOLTEN_FRANKLINITE = new Material.Builder(GregECore.id("molten_franklinite"))
-                .fluid()
-                .color(0x964B00)
-                .iconSet(MaterialIconSet.FLUID)
-                .flags(MaterialFlags.DISABLE_DECOMPOSITION)
-                .buildAndRegister();
-
         DEIONIZED_WATER = new Material.Builder(GregECore.id("deionized_water"))
                 .fluid()
                 .color(0xdddddd)
                 .iconSet(MaterialIconSet.FLUID)
                 .flags(MaterialFlags.DISABLE_DECOMPOSITION)
                 .buildAndRegister();
+
+        buildFluidMaterial("molten_mythril", 0x63A2B0);
+        buildFluidMaterial("molten_franklinite", 0x964B00);
+        buildFluidMaterial("xenozene_gas", 0xAAFF00);
+        buildFluidMaterial("nobalureium_gas", 0x6495ED);
+        buildFluidMaterial("quadractik_gas", 0xB4C424);
+        buildFluidMaterial("jelenogas_gas", 0x808000);
+        buildFluidMaterial("verci_54", 0x9F2B68);
+        buildFluidMaterial("manopered_36", 0x5D3FD3);
+        buildFluidMaterial("quenzin", 0x770737);
+        buildFluidMaterial("superheated_solar", 0xFDDA0D);
     }
 }
