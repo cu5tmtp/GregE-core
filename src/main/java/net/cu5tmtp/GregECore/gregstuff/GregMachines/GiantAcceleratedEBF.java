@@ -214,7 +214,7 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
                     " they require ").withStyle(style -> style.withColor(0x90EE90)).append(Component.literal("1mb of Deionized Water per 40 ticks.").withStyle(style -> style.withColor(0xFF0000))))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("The machine only accepts 32 of the same coil. Do not mix them. After the machine forms, " +
-                    "you can see activated Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
+                    "you can see activated Magical Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
             .register();
 
     @Override

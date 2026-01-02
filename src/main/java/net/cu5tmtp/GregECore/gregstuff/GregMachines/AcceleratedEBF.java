@@ -19,6 +19,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -121,12 +122,12 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
                     " Depending on the coil, the machine speeds up faster. The coils tell you the exact amount of recipe time reduction.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("The machine only accepts 18 of the same coil. Do not mix them. After the machine forms, " +
-                    "you can see activated Magic Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
+                    "you can see activated Magical Coil abilities in the controller,").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips()
             .register();
 
     @Override
-    public void addDisplayText(List<Component> textList) {
+    public void addDisplayText(@NotNull List<Component> textList) {
         super.addDisplayText(textList);
 
         if (isFormed()) {

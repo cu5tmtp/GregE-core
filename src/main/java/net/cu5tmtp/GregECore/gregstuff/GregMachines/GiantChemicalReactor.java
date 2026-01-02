@@ -78,7 +78,7 @@ public class GiantChemicalReactor extends WorkableElectricMultiblockMachine {
                     this.speedBoost = 1.0;
                     return super.beforeWorking(recipe);
                 } else if (stack.is(PARALLEL_BACTERIA.get())) {
-                    this.parallelBoost = 32;
+                    this.parallelBoost = 64;
                     this.energyBoost = 1.0;
                     this.speedBoost = 1.0;
                     return super.beforeWorking(recipe);
