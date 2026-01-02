@@ -9,6 +9,7 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.mojang.logging.LogUtils;
 import net.cu5tmtp.GregECore.block.ModBlocks;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregERecipeTypes;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEStuffInit;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.ModCreativeModTabs;
 import net.cu5tmtp.GregECore.item.GreggyItems;
 import net.cu5tmtp.GregECore.item.ModItems;

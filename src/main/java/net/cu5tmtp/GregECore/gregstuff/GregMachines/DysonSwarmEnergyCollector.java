@@ -10,7 +10,7 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GCYMBlocks;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.managers.DysonSwarmManager;
-import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregEModifiers;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEModifiers;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregERecipeTypes;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

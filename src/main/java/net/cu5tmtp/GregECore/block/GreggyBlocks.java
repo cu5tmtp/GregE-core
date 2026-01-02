@@ -54,6 +54,9 @@ public class GreggyBlocks {
     public static final BlockEntry<ActiveBlock> VIBRATION_ENGINE_INTAKE = createActiveBlock("vibration_engine_intake",
             GregECore.id("block/engines/vibration_engine_intake"));
 
+    public static final BlockEntry<ActiveBlock> PTFE_FIREBOX = createActiveBlock("ptfe_firebox_casing",
+            GregECore.id("block/firebox/ptfe_firebox"));
+
     public static final void init(){}
 }
 

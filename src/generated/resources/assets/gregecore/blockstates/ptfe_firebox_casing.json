@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "gregecore:block/ptfe_firebox_casing"
+    },
+    "active=true": {
+      "model": "gregecore:block/ptfe_firebox_casing_active"
+    }
+  }
+}

@@ -11,7 +11,7 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
-import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregEModifiers;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEModifiers;
 import net.cu5tmtp.GregECore.tag.ModTag;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

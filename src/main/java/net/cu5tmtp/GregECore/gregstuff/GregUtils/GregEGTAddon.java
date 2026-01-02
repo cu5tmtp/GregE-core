@@ -5,6 +5,7 @@ import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.KJSRecipeKeyEvent;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import net.cu5tmtp.GregECore.block.GreggyBlocks;
+import net.cu5tmtp.GregECore.item.GreggyItems;
 import net.minecraft.data.recipes.FinishedRecipe;
 import java.util.function.Consumer;
 

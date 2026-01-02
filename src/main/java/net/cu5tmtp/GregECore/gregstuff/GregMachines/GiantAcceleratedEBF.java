@@ -19,7 +19,7 @@ import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.utils.GTTransferUtils;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMaps;
-import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregEModifiers;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEModifiers;
 import net.cu5tmtp.GregECore.item.GreggyItems;
 import net.cu5tmtp.GregECore.tag.ModTag;
 import net.minecraft.ChatFormatting;

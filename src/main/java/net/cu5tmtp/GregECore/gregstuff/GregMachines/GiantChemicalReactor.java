@@ -17,11 +17,13 @@ import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMaps;
-import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregEModifiers;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEModifiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -106,11 +108,11 @@ public class GiantChemicalReactor extends WorkableElectricMultiblockMachine {
             .appearanceBlock(CASING_STEEL_SOLID)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
-                        .aisle(" GGG ", " EEE ", " EFE ", " EEE ", " III ", " EEE ", " EFE ", " EEE ", " GGG ")
-                        .aisle("GHHHG", "E   E", "E F E", "E   E", "I F I", "E   E", "E F E", "E   E", "GHHHG")
-                        .aisle("GHFHG", "E F E", "FFFFF", "E F E", "IFFFI", "E F E", "FFFFF", "E F E", "GHFHG")
-                        .aisle("GHHHG", "E   E", "E F E", "E   E", "I F I", "E   E", "E F E", "E   E", "GHHHG")
-                        .aisle(" GGG ", " EEE ", " EFE ", " EEE ", " III ", " EEE ", " EFE ", " EEE ", " GGG ")
+                        .aisle(" GGG ", " EEE ", " EFE ", " EEE ", " HHH ", " EEE ", " EFE ", " EEE ", " GGG ")
+                        .aisle("GEEEG", "E   E", "E F E", "E   E", "H F H", "E   E", "E F E", "E   E", "GEEEG")
+                        .aisle("GEFEG", "E F E", "FFFFF", "E F E", "HFFFH", "E F E", "FFFFF", "E F E", "GEFEG")
+                        .aisle("GEEEG", "E   E", "E F E", "E   E", "H F H", "E   E", "E F E", "E   E", "GEEEG")
+                        .aisle(" GGG ", " EEE ", " EFE ", " EEE ", " HIH ", " EEE ", " EFE ", " EEE ", " GGG ")
                         .aisle("     ", "     ", "     ", "     ", "  I  ", "     ", "     ", "     ", "     ")
                         .aisle(" CCC ", " BIB ", " BIB ", "  I  ", "  I  ", "     ", "     ", "     ", "     ")
                         .aisle(" CCC ", " BAB ", " BBB ", "     ", "     ", "     ", "     ", "     ", "     ")
@@ -125,8 +127,8 @@ public class GiantChemicalReactor extends WorkableElectricMultiblockMachine {
                         .where('C', Predicates.blocks(FIREBOX_STEEL.get()))
                         .where('E', Predicates.blocks(CASING_PTFE_INERT.get()))
                         .where('F', Predicates.blocks(GCYMBlocks.MOLYBDENUM_DISILICIDE_COIL_BLOCK.get()))
-                        .where('G', Predicates.blocks(CASING_EXTREME_ENGINE_INTAKE.get()))
-                        .where('H', Predicates.blocks(CASING_TUNGSTENSTEEL_ROBUST.get()))
+                        .where('G', Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gregecore:ptfe_engine_intake"))))
+                        .where('H', Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gregecore:ptfe_firebox_casing"))))
                         .where('I', Predicates.blocks(CASING_POLYTETRAFLUOROETHYLENE_PIPE.get()))
                         .where(' ', Predicates.any())
                         .build();
