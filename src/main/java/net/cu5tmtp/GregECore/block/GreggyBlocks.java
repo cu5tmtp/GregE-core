@@ -48,6 +48,9 @@ public class GreggyBlocks {
     public static final BlockEntry<ActiveBlock> MALACHITE_COIL = createActiveBlock("malachite_coil",
             GregECore.id("block/coils/machine_coil_malachite"));
 
+    public static final BlockEntry<ActiveBlock> FORGOTTEN_COIL = createActiveBlock("forgotten_coil",
+            GregECore.id("block/coils/machine_coil_forgotten"));
+
     public static final BlockEntry<ActiveBlock> PTFE_ENGINE_INTAKE = createActiveBlock("ptfe_engine_intake",
             GregECore.id("block/engines/ptfe_engine_intake"));
 

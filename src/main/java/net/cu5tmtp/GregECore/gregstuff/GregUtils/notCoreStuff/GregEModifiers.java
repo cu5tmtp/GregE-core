@@ -6,8 +6,10 @@ import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic;
+import com.mojang.logging.LogUtils;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.*;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.managers.DysonSwarmManager;
+import org.slf4j.Logger;
 
 public class GregEModifiers {
 
@@ -59,14 +61,14 @@ public class GregEModifiers {
 
         double speedMultiplier = switch (blastFurnaceTemperature) {
             case 7400 -> 0.8;
-            case 9200 -> 0.6;
+            case 9300 -> 0.6;
             case 11000 -> 0.4;
             default -> 0.8;
         };
 
         int parallelsMax = switch (blastFurnaceTemperature) {
             case 7400 -> 2;
-            case 9200 -> 4;
+            case 9300 -> 4;
             case 11000 -> 8;
             default -> 2;
         };

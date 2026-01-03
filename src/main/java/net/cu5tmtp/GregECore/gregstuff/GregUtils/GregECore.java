@@ -14,9 +14,12 @@ import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.ModCreativeModTabs
 import net.cu5tmtp.GregECore.item.GreggyItems;
 import net.cu5tmtp.GregECore.item.ModItems;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.portal.PortalShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -76,11 +79,25 @@ public class GregECore {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
     }
-
+    
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
     }
 
+    //due to the mod that disables nether portal also disabling undergarden portal, this is needed
+    @Mod.EventBusSubscriber(modid = GregECore.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public static class ForgeEvents {
+        @SubscribeEvent
+        public static void onPortalIgnition(BlockEvent.PortalSpawnEvent event) {
+            PortalShape shape = event.getPortalSize();
+
+            if (shape != null) {
+                if (event.getLevel().getBlockState(event.getPos().below()).is(Blocks.OBSIDIAN)) {
+                    event.setCanceled(true);
+                }
+            }
+        }
+    }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent

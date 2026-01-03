@@ -160,7 +160,7 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
 
         this.coilTemp = switch (registryName) {
             case "gregecore:malachite_coil" -> 7400;
-            case "gregecore:twilight_coil"  -> 9200;
+            case "gregecore:forgotten_coil"  -> 9200;
             case "gregecore:desh_coil"      -> 11000;
             default -> 0;
         };

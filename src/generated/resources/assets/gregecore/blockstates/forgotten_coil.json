@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "gregecore:block/forgotten_coil"
+    },
+    "active=true": {
+      "model": "gregecore:block/forgotten_coil_active"
+    }
+  }
+}

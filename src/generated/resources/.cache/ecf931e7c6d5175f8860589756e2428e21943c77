@@ -1,8 +1,9 @@
-// 1.20.1	2026-01-03T00:09:20.4216896	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2026-01-03T20:23:26.9861233	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 b3c78504318281555d96db9c7eab46d9091cf7bc assets/gregecore/blockstates/acceleratedebf.json
 0aaf2a751d9dfb16aba5881be7eabef3e7b2fe05 assets/gregecore/blockstates/desh_coil.json
 4acb5f34d5cb39be6d717b25f2b285518421feea assets/gregecore/blockstates/dysonswarmenergycollector.json
 4f2b4889da1bc77fbb01045b6cc718cf6f465579 assets/gregecore/blockstates/dysonswarmlauncher.json
+cc0bd4fffcdaef0d7c4b1c4c4ef865e1c771b64b assets/gregecore/blockstates/forgotten_coil.json
 01debd1f715479fc162486cc4620f189df521e2e assets/gregecore/blockstates/giantacceleratedebf.json
 1ae3ca08c6e27bc3953f07e2df79eceff40ed203 assets/gregecore/blockstates/giantchr.json
 f2f50b64fdb313df8661ead69ca7f431c3b6aa82 assets/gregecore/blockstates/malachite_coil.json
@@ -11,10 +12,12 @@ f2f50b64fdb313df8661ead69ca7f431c3b6aa82 assets/gregecore/blockstates/malachite_
 d60f6d810d134e1c0e2af25212387fdc67dc6095 assets/gregecore/blockstates/ptfe_firebox_casing.json
 e5837a7a2f3ad102feb94b87b41c3d8c1b408d99 assets/gregecore/blockstates/twilight_coil.json
 1af622f1f41ecf9ca0b7f1da355673262c21dc57 assets/gregecore/blockstates/vibration_engine_intake.json
-2738e54e0155371f49430e260d5e5463dce2659b assets/gregecore/lang/en_ud.json
-0e9f79ea7426512cd0c968e23654d3c37fb59111 assets/gregecore/lang/en_us.json
+866c2b714c5edd269b3418660f7dd961bb2f927a assets/gregecore/lang/en_ud.json
+236ae75965ebbb5e91d81778f370e4134d522b84 assets/gregecore/lang/en_us.json
 89c059adfc30af4e4553d5d36906a967355c53a9 assets/gregecore/models/block/desh_coil.json
 072590c807254d38c52858b9094d787e27813b8e assets/gregecore/models/block/desh_coil_active.json
+5b77f979fc117ed4e38c3e4a0cca0587d2b5c26c assets/gregecore/models/block/forgotten_coil.json
+a52a23211b0c63b8cce990584963eb2e160cf898 assets/gregecore/models/block/forgotten_coil_active.json
 fea4368454b99832d361890c89a0560cfb9aede1 assets/gregecore/models/block/machine/acceleratedebf.json
 595cb1fffd6fd98e836ee02c15631330fcdff000 assets/gregecore/models/block/machine/dysonswarmenergycollector.json
 41b900a2b1b16ce1af3314b529e243d24ceb42c2 assets/gregecore/models/block/machine/dysonswarmlauncher.json
@@ -36,6 +39,7 @@ e0de3f7b665892549797a81109a946be4bc32553 assets/gregecore/models/block/vibration
 07eba2add0796371cb51fd57de3f4c11d5dcd539 assets/gregecore/models/item/desh_coil.json
 a27b515e873c9531e2f679d4a6351fbc3f5903bf assets/gregecore/models/item/dysonswarmenergycollector.json
 229d1251f9a000b6206da87bffa09bfd4eef11f3 assets/gregecore/models/item/dysonswarmlauncher.json
+04ebd1d56259bd9f49206fd9d078c33d75ff9a93 assets/gregecore/models/item/forgotten_coil.json
 9272526de3a4d31b124064fad01d64e6344fcc71 assets/gregecore/models/item/giantacceleratedebf.json
 be1797a4eca45df31dbeaf2c2dcd738e6436abe2 assets/gregecore/models/item/giantchr.json
 31cbdec47b241fe7ee1cafe25711fe97de83c6c9 assets/gregecore/models/item/malachite_coil.json
@@ -45,6 +49,7 @@ e0d4138a800464ba45744e7ec1c21499abf9720c assets/gregecore/models/item/ptfe_fireb
 0ba4b9e746ff15bb1c48058eed71d36ac5c5da78 assets/gregecore/models/item/twilight_coil.json
 ae7947d31304252642a35f5e25bd5c2f28f8686c assets/gregecore/models/item/vibration_engine_intake.json
 746a6c785ebe18af9963e3923809ff7a35bfd00b data/gregecore/loot_tables/blocks/desh_coil.json
+18e9ae4352ff0588e3a5d4b87874905a207c8b86 data/gregecore/loot_tables/blocks/forgotten_coil.json
 941a4ab362eceb3dadc0a097c389a6e0da9473e3 data/gregecore/loot_tables/blocks/malachite_coil.json
 faf694dfd8dc0036ddebc7dbd32c715a621857d4 data/gregecore/loot_tables/blocks/manasteel_coil.json
 9c5ede46666ef3dff24496b4fda715bcf95e2457 data/gregecore/loot_tables/blocks/ptfe_engine_intake.json
