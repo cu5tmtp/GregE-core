@@ -9,6 +9,7 @@ import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.dyson.DysonSwarmLau
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.AssemblyHall;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.GenesisCrucible;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.GenesisCrucibleCases;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.PrecisionFabricationArray;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.AcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.GiantAcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.GiantAlloyBlastSmelter;
@@ -103,7 +104,9 @@ public class ModCreativeModTabs {
                         pOutput.accept(BloodCathedral.BLODDCATHEDRAL.getItem());
                         pOutput.accept(GenesisCrucible.GENESISCRUCIBLE.getItem());
                         pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE1.getItem());
+                        pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE2.getItem());
                         pOutput.accept(AssemblyHall.ASSEMBLYHALL.getItem());
+                        pOutput.accept(PrecisionFabricationArray.PFARRAY.getItem());
 
                         for (MachineDefinition box : UHVMultiRegistry.ALL_MACHINES) {
                             pOutput.accept(box.getItem());

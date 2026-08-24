@@ -190,7 +190,7 @@ public class GregERecipeTypes {
 
                             String readableName = switch (internalName) {
                                 case "genesiscruciblecaseone" -> "D";
-                                case "genesiscruciblecasetwo" -> "Placeholder 2";
+                                case "genesiscruciblecasetwo" -> "K";
                                 case "genesiscruciblecasethree" -> "Placeholder 3";
                                 case "genesiscruciblecasefour" -> "Placeholder 4";
                                 default -> internalName;
@@ -208,6 +208,12 @@ public class GregERecipeTypes {
                 }
                 return null;
             });
+
+    public static GTRecipeType PFARRAYCRAFT = GTRecipeTypes.register("pfarraycraft", "euclid")
+            .setMaxIOSize(6,1,0,0)
+            .setEUIO(IO.IN)
+            .setProgressBar(GregEGUITextures.PRECISION_ARRAY_PROGRESS, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ASSEMBLER);
 
     public static GTRecipeType DUMMYRECIPE = GTRecipeTypes.register("dummydontuse", GTRecipeTypes.MULTIBLOCK)
             .setMaxIOSize(3,3,3,3)

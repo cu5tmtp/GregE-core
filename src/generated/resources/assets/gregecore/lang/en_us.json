@@ -46,8 +46,11 @@
   "block.gregecore.bloodcathedral": "§lBlood Cathedral§g",
   "block.gregecore.assemblyhall": "§lAssembly Hall§g",
   "block.gregecore.genesiscrucible": "§lGenesis Crucible§g",
-  "block.gregecore.genesiscruciblecaseone": "Genesis Crucible Cartridge: §vDelirium",
+  "block.gregecore.genesiscruciblecaseone": "Genesis Crucible Cartridge: §dDelirium",
+  "block.gregecore.genesiscruciblecasetwo": "Genesis Crucible Cartridge: §dKamenium",
+  "block.gregecore.pfarray": "§lPrecision Fabrication Array§g",
 
+  "gtceu.pfarraycraft": "Precision Fabrication Array",
   "gtceu.recipe.cleanroom_dimensional.display_name": "Dimensional Simulator",
   "gtceu.infusion_altar_infusing": "Infusing",
   "gtceu.sascrafting": "Synthetizing",

@@ -8,6 +8,7 @@ import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.dyson.DysonSwarmLau
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.AssemblyHall;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.GenesisCrucible;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.GenesisCrucibleCases;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.PrecisionFabricationArray;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.AcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.GiantAcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.GiantAlloyBlastSmelter;
@@ -65,6 +66,7 @@ public class GregEStuffInit {
         GenesisCrucible.init();
         GenesisCrucibleCases.init();
         AssemblyHall.init();
+        PrecisionFabricationArray.init();
     }
 
     public static void initGregEParts(){

@@ -1,4 +1,4 @@
-// 1.20.1	2026-08-22T00:31:24.5346913	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2026-08-24T15:34:29.6979568	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 b3c78504318281555d96db9c7eab46d9091cf7bc assets/gregecore/blockstates/acceleratedebf.json
 624b7a3f9d408815e2f0474a1b95487f10f6ec43 assets/gregecore/blockstates/advanced_coolant_input_machine.json
 b5deca0f2f21cbbe20bf59893ff42cc80e314ab7 assets/gregecore/blockstates/advanced_heater_input_machine.json
@@ -36,6 +36,7 @@ cc0bd4fffcdaef0d7c4b1c4c4ef865e1c771b64b assets/gregecore/blockstates/forgotten_
 2e0a1936e7405f9a9055e02cec660c0c7a11c67f assets/gregecore/blockstates/fornaxuniversi.json
 3032c50a3c036396e1d371b2d05b118fc662fb39 assets/gregecore/blockstates/genesiscrucible.json
 48cf4bbceec3d0327cf99e81f818e59b44f3ead2 assets/gregecore/blockstates/genesiscruciblecaseone.json
+9b602d18f1238f3596012961aa5a3e141f4129ee assets/gregecore/blockstates/genesiscruciblecasetwo.json
 2f568c30e9e90dc8323da0d07536a3f0bad32be6 assets/gregecore/blockstates/giantabs.json
 01debd1f715479fc162486cc4620f189df521e2e assets/gregecore/blockstates/giantacceleratedebf.json
 1ae3ca08c6e27bc3953f07e2df79eceff40ed203 assets/gregecore/blockstates/giantchr.json
@@ -71,6 +72,7 @@ f2f50b64fdb313df8661ead69ca7f431c3b6aa82 assets/gregecore/blockstates/malachite_
 a7e876cb4b463a8a1ffadae72e404d3bb9d97193 assets/gregecore/blockstates/parallel_booster_machine.json
 ec87236e7ab99959422592da3fab4c32015c9030 assets/gregecore/blockstates/pedestal_inf_machine.json
 301ef67d494a89fcb1fc8f002fa78f7c57540615 assets/gregecore/blockstates/perditio_input_machine.json
+65cf69d6de2d92676915a42b3a0aa16c20a8cf00 assets/gregecore/blockstates/pfarray.json
 a0ed9dc1b9ee1b225af3b4d84dbb8d4988e2c181 assets/gregecore/blockstates/pressurechamber.json
 14d4fbc42c23dc5d22f1a75291d3ae835678edde assets/gregecore/blockstates/pressure_input_machine.json
 7bd70af8a98abd636876644b5e4957da24357850 assets/gregecore/blockstates/ptfe_engine_intake.json
@@ -93,8 +95,8 @@ dbdaed3bea5ecadd222d9717e4234a6b4f394d3f assets/gregecore/blockstates/threading_
 8c9c4604d58077ce4cf9f78d22b5696d1f04c9c0 assets/gregecore/blockstates/threading_two_machine.json
 e5837a7a2f3ad102feb94b87b41c3d8c1b408d99 assets/gregecore/blockstates/twilight_coil.json
 1af622f1f41ecf9ca0b7f1da355673262c21dc57 assets/gregecore/blockstates/vibration_engine_intake.json
-0a89d69eaeaf6b80ccac402f0037b55fc7f6484a assets/gregecore/lang/en_ud.json
-74985acf4e489d7eabb0b156c6905b8f7d301ec8 assets/gregecore/lang/en_us.json
+6c80b1c529aab8f6d70a156a15fd6671f66d2c32 assets/gregecore/lang/en_ud.json
+216d7afa3833a5ed89c60665228712d0a80d13ce assets/gregecore/lang/en_us.json
 d0d40ce346a144fb0402f20755852211b19e9538 assets/gregecore/models/block/assembly_engine_intake.json
 a9561563c39e10400268c97ac9783bff175a3ca9 assets/gregecore/models/block/assembly_engine_intake_active.json
 efe345e03fe00196c60542bafe5b989e8c89f7c4 assets/gregecore/models/block/atomic_engine_intake.json
@@ -139,6 +141,7 @@ adec9153149a2d88d44643f999d51a440cbfd957 assets/gregecore/models/block/machine/f
 8a6017c2b18f17b0ae519c822599f9c376e17b5d assets/gregecore/models/block/machine/fornaxuniversi.json
 596ab3c46c5d8aec0533a4743eaeb96401c152d8 assets/gregecore/models/block/machine/genesiscrucible.json
 16bc10cd936d0d38023041ab2edefaf1b6bd3acb assets/gregecore/models/block/machine/genesiscruciblecaseone.json
+390db0f208f04a72d0841e2b89a0715d86fc2876 assets/gregecore/models/block/machine/genesiscruciblecasetwo.json
 c1709a9138f4a770bf98f5afd468d1986fd009c6 assets/gregecore/models/block/machine/giantabs.json
 a03c168e6486dd159e1351fc1b751e2f2f9ef700 assets/gregecore/models/block/machine/giantacceleratedebf.json
 3c8b321be9ff8d37cbc1847516539db8c330a4cc assets/gregecore/models/block/machine/giantchr.json
@@ -172,6 +175,7 @@ ca3cc05f23d1fc758b19f21738cb95ea4d7b0b2c assets/gregecore/models/block/machine/i
 7bc42ce223da43e19b2c761abdc928c5276c9d26 assets/gregecore/models/block/machine/parallel_booster_machine.json
 ad28826dff6b689c91034ecfda78d2ad6fcc4c40 assets/gregecore/models/block/machine/pedestal_inf_machine.json
 e8dd21d135790a03be5ad7bdb92c3917fe41272c assets/gregecore/models/block/machine/perditio_input_machine.json
+a2efbf457592a9932a5ff312ae5401bbacac5d53 assets/gregecore/models/block/machine/pfarray.json
 b2b5f42e58b678d090435f16bff5980c9c00e63f assets/gregecore/models/block/machine/pressurechamber.json
 f855daac0cd86938e82c156ba8c93ceb44595d6c assets/gregecore/models/block/machine/pressure_input_machine.json
 47a165d63add78e78659ee1a2ebe1e6e1ef2309c assets/gregecore/models/block/machine/realityfractureengine.json
@@ -242,6 +246,7 @@ ff3bee43c480143493944e7c9ff85d2f4039b7a8 assets/gregecore/models/item/enhancedfr
 5099ab81b347b99bed18791a384c518d6c31a279 assets/gregecore/models/item/fornaxuniversi.json
 a308f5b018c10c1520fe22f4bede40b316991500 assets/gregecore/models/item/genesiscrucible.json
 ff86defd11b04626f302a831ae5660929a819297 assets/gregecore/models/item/genesiscruciblecaseone.json
+d064c081b038571a55cc05963d86ce622f6302fd assets/gregecore/models/item/genesiscruciblecasetwo.json
 912873126e5e03a481e51e0edbae6195a95bef25 assets/gregecore/models/item/giantabs.json
 9272526de3a4d31b124064fad01d64e6344fcc71 assets/gregecore/models/item/giantacceleratedebf.json
 be1797a4eca45df31dbeaf2c2dcd738e6436abe2 assets/gregecore/models/item/giantchr.json
@@ -277,6 +282,7 @@ d8934465d65e687084523419f0a217d08bdcd585 assets/gregecore/models/item/ordo_input
 24bd2e34f797b31248f6db8a7a88e2cf2784d171 assets/gregecore/models/item/parallel_booster_machine.json
 e37350bfce9b51f26c323c733017863709cf3b87 assets/gregecore/models/item/pedestal_inf_machine.json
 031e7cb61bb2309e0bc2772d97c90c967c0ef542 assets/gregecore/models/item/perditio_input_machine.json
+79d336f003b1b0a6bf18aa042da7a1d1fea734b4 assets/gregecore/models/item/pfarray.json
 bd12ecdd243c8e4dc7a5db0687a1dc0a60e17b6a assets/gregecore/models/item/pressurechamber.json
 9ec44daeedc89cd9b2774a89c7ecba81c52fd58c assets/gregecore/models/item/pressure_input_machine.json
 dccfb2f5480b6a00145bf441a780874373d1ef27 assets/gregecore/models/item/ptfe_engine_intake.json
