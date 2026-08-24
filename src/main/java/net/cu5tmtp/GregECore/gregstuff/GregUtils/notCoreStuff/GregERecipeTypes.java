@@ -55,10 +55,10 @@ public class GregERecipeTypes {
             .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.FIRE);
     
-    public static GTRecipeType STAR_MAYKR_SINGULARITIES = GTRecipeTypes.register("star_maykr_singularities", GTRecipeTypes.MULTIBLOCK)
+    public static GTRecipeType STAR_MAYKR_SINGULARITIES = GTRecipeTypes.register("star_maykr_singularities", "endgame")
             .setMaxIOSize(9,1,0,0)
             .setEUIO(IO.IN)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setProgressBar(GregEGUITextures.STARMAYKR_PROGRESS, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.JET_ENGINE)
             .addDataInfo(data -> {
                 if (data.contains("weight")) {
@@ -102,10 +102,10 @@ public class GregERecipeTypes {
                 return null;
             });
 
-    public static GTRecipeType FORNAX_UNIVERSI_ACCELERETION = GTRecipeTypes.register("fornax_universi_acceleration", GTRecipeTypes.MULTIBLOCK)
+    public static GTRecipeType FORNAX_UNIVERSI_ACCELERETION = GTRecipeTypes.register("fornax_universi_acceleration", "endgame")
             .setMaxIOSize(9,1,0,0)
             .setEUIO(IO.IN)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setProgressBar(GregEGUITextures.FORNAX_PROGRESS, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.JET_ENGINE);
 
     public static GTRecipeType SPECIALIZEDASSEMBLYLINE = GTRecipeTypes.register("specializedassemblyline", GTRecipeTypes.MULTIBLOCK)
@@ -173,7 +173,7 @@ public class GregERecipeTypes {
                 }
             });
 
-    public static GTRecipeType GCCRAFTING = GTRecipeTypes.register("gccrafting", "endgame")
+    public static GTRecipeType GCCRAFTING = GTRecipeTypes.register("gccrafting", "euclid")
             .setMaxIOSize(6,3,3,3)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
@@ -279,10 +279,10 @@ public class GregERecipeTypes {
             .setSound(GTSoundEntries.JET_ENGINE)
             .addDataInfo(data -> ChatFormatting.RED + "Needs all 3 eyes inserted.");
 
-    public static GTRecipeType SEND_UP_THE_MATS = GTRecipeTypes.register("send_up_the_mats", GTRecipeTypes.MULTIBLOCK)
+    public static GTRecipeType SEND_UP_THE_MATS = GTRecipeTypes.register("send_up_the_mats", "endgame")
             .setMaxIOSize(6,6, 3,3)
             .setEUIO(IO.IN)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setProgressBar(GregEGUITextures.ELEVATOR_PROGRESS, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.JET_ENGINE)
             .addDataInfo(data -> {
                 if (data.contains("height_level")) {
@@ -292,10 +292,10 @@ public class GregERecipeTypes {
                 return null;
             });
 
-    public static GTRecipeType DEEP_SPACE_EXPLORE = GTRecipeTypes.register("deep_space_explore", GTRecipeTypes.MULTIBLOCK)
+    public static GTRecipeType DEEP_SPACE_EXPLORE = GTRecipeTypes.register("deep_space_explore", "endgame")
             .setMaxIOSize(6,6, 6,6)
             .setEUIO(IO.IN)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setProgressBar(GregEGUITextures.DEEP_PROGRESS, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.SCIENCE)
             .addDataInfo(data -> {
                 List<String> info = new ArrayList<>();
