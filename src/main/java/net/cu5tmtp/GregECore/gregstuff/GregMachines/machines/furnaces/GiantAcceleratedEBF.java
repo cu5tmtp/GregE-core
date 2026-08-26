@@ -22,14 +22,11 @@ import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.parallel.AdvancedParal
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.coolant.CoolantInputPartMachine;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.parallel.ParallelBoosterPartMachine;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEModifiers;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEPredicates;
 import net.cu5tmtp.GregECore.item.GreggyItems;
-import net.cu5tmtp.GregECore.tag.ModTag;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
@@ -58,7 +55,7 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
     @Override
     public void onStructureFormed() {
         super.onStructureFormed();
-        this.checkCoil();
+        coilTemp = GregEPredicates.getMagicalCoilTemperature(getMultiblockState().getMatchContext());
         List<IFluidHandler> coolantContainers = new ArrayList<>();
 
         //This part of the code is the same as HPCA coolant consuming from base GTCEu - thanks for teaching me how to do that!
@@ -152,49 +149,6 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
         return super.beforeWorking(recipe);
     }
 
-    private void checkCoil() {
-
-        //Check is coils are the same
-        Level level = getLevel();
-        if (level == null || level.isClientSide) return;
-
-        var back = getFrontFacing().getOpposite();
-
-        BlockPos scanStart = getPos().above().relative(back,2);
-
-        java.util.Set<Block> foundCoils = new java.util.HashSet<>();
-
-        for (int y = 0; y <= 4; y++) {
-            BlockPos currentCenter = scanStart.above(y);
-            if (y == 2) continue;
-
-            for (int x = -1; x <= 1; x++) {
-                for (int z = -1; z <= 1; z++) {
-                    if (x == 0 && z == 0) continue;
-
-                    BlockPos coilPos = currentCenter.offset(x, 0, z);
-                    Block block = level.getBlockState(coilPos).getBlock();
-
-                    foundCoils.add(block);
-                }
-            }
-        }
-
-        if (foundCoils.size() != 1) {
-            this.coilTemp = 0;
-            return;
-        }
-
-        Block coilBlock = foundCoils.iterator().next();
-        String registryName = ForgeRegistries.BLOCKS.getKey(coilBlock).toString();
-
-        this.coilTemp = switch (registryName) {
-            case "gregecore:malachite_coil" -> 7400;
-            case "gregecore:forgotten_coil" -> 9300;
-            case "gregecore:superelement_coil" -> 11000;
-            default -> 0;
-        };
-    }
 
     @Override
     public void onStructureInvalid() {
@@ -233,7 +187,7 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
                                 .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                 .or(Predicates.abilities(CoolantInputPartMachine.getPartAbility()).setExactLimit(1)))
                         .where('C', Predicates.abilities(PartAbility.MUFFLER).setMaxGlobalLimited(1))
-                        .where('D', Predicates.blockTag(ModTag.Blocks.MAGICAL_COILS_T2))
+                        .where('D', GregEPredicates.tierTwoMagicalCoils())
                         .where('E', Predicates.blocks(CASING_EXTREME_ENGINE_INTAKE.get()))
                         .where('F', Predicates.blocks(FIREBOX_TUNGSTENSTEEL.get()))
                         .where('G', Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:tungsten_carbide_frame"))))

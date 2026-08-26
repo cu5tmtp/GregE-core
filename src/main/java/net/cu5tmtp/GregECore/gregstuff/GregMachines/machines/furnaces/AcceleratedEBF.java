@@ -15,13 +15,9 @@ import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.threadParts.ThreadT1PartMachine;
 import net.cu5tmtp.GregECore.gregstuff.GregRecipeLogic.MultiThreadedRecipeLogic;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEModifiers;
-import net.cu5tmtp.GregECore.tag.ModTag;
-import net.minecraft.core.BlockPos;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEPredicates;
 import net.minecraft.network.chat.Component;
 import net.minecraft.ChatFormatting;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -54,48 +50,7 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
                 }
             }
         }
-        this.checkCoil();
-    }
-
-    private void checkCoil() {
-        Level level = getLevel();
-        if (level == null || level.isClientSide) return;
-
-        var back = getFrontFacing().getOpposite();
-
-        BlockPos scanStart = getPos().above().relative(back);
-
-        java.util.Set<Block> foundCoils = new java.util.HashSet<>();
-
-        for (int y = 0; y <= 1; y++) {
-            BlockPos currentCenter = scanStart.above(y);
-
-            for (int x = -1; x <= 1; x++) {
-                for (int z = -1; z <= 1; z++) {
-                    if (x == 0 && z == 0) continue;
-
-                    BlockPos coilPos = currentCenter.offset(x, 0, z);
-                    Block block = level.getBlockState(coilPos).getBlock();
-
-                    foundCoils.add(block);
-                }
-            }
-        }
-
-        if (foundCoils.size() != 1) {
-            this.coilTemp = 0;
-            return;
-        }
-
-        Block coilBlock = foundCoils.iterator().next();
-        String registryName = ForgeRegistries.BLOCKS.getKey(coilBlock).toString();
-
-        this.coilTemp = switch (registryName) {
-            case "gregecore:manasteel_coil" -> 1800;
-            case "gregecore:twilight_coil"  -> 3600;
-            case "gregecore:desh_coil"      -> 5400;
-            default -> 0;
-        };
+        coilTemp = GregEPredicates.getMagicalCoilTemperature(getMultiblockState().getMatchContext());
     }
 
     @Override
@@ -137,7 +92,7 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
                                 .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                 .or(Predicates.abilities(ThreadT1PartMachine.getPartAbility()).setMaxGlobalLimited(1).setPreviewCount(1)))
                         .where('C', Predicates.abilities(PartAbility.MUFFLER).setMaxGlobalLimited(1))
-                        .where('D', Predicates.blockTag(ModTag.Blocks.MAGICAL_COILS_T1))
+                        .where('D', GregEPredicates.tierOneMagicalCoils())
                         .where(' ', Predicates.any())
 
                         .build();
