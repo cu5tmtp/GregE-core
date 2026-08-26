@@ -55,7 +55,9 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
     @Override
     public void onStructureFormed() {
         super.onStructureFormed();
-        coilTemp = GregEPredicates.getMagicalCoilTemperature(getMultiblockState().getMatchContext());
+
+        this.coilTemp = GregEPredicates.getMagicalCoilTemperature(getMultiblockState().getMatchContext());
+
         List<IFluidHandler> coolantContainers = new ArrayList<>();
 
         //This part of the code is the same as HPCA coolant consuming from base GTCEu - thanks for teaching me how to do that!
@@ -157,6 +159,9 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
         if (getRecipeLogic() instanceof MultiThreadedRecipeLogic logic) {
             logic.setMultiThreaded(false);
         }
+
+        this.coilTemp = 0;
+
         super.onStructureInvalid();
     }
 

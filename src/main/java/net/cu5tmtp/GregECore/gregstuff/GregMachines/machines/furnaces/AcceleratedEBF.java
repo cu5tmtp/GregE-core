@@ -50,7 +50,7 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
                 }
             }
         }
-        coilTemp = GregEPredicates.getMagicalCoilTemperature(getMultiblockState().getMatchContext());
+        this.coilTemp = GregEPredicates.getMagicalCoilTemperature(getMultiblockState().getMatchContext());
     }
 
     @Override
@@ -59,6 +59,8 @@ public class AcceleratedEBF extends WorkableElectricMultiblockMachine {
         if (getRecipeLogic() instanceof MultiThreadedRecipeLogic logic) {
             logic.setMultiThreaded(false);
         }
+
+        this.coilTemp = 0;
         super.onStructureInvalid();
     }
 
