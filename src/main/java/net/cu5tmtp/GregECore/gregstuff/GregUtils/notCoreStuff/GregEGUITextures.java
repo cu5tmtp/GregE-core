@@ -20,4 +20,7 @@ public class GregEGUITextures {
 
     public static final ResourceTexture DEEP_PROGRESS = new ResourceTexture(
             "gregecore:textures/progress/deep.png");
+
+    public static final ResourceTexture AMSPEC = new ResourceTexture(
+            "gregecore:textures/progress/amspec.png");
 }

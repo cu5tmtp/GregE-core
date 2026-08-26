@@ -48,6 +48,7 @@
   "block.gregecore.genesiscrucible": "§lGenesis Crucible§g",
   "block.gregecore.genesiscruciblecaseone": "Genesis Crucible Cartridge: §dDelirium",
   "block.gregecore.genesiscruciblecasetwo": "Genesis Crucible Cartridge: §dKamenium",
+  "block.gregecore.genesiscruciblecasethree": "Genesis Crucible Cartridge: §dGrympl",
   "block.gregecore.pfarray": "§lPrecision Fabrication Array§g",
 
   "gtceu.pfarraycraft": "Precision Fabrication Array",
@@ -71,6 +72,7 @@
   "gtceu.netherdrillrig": "Nether Drill Rig",
   "gtceu.gccrafting": "Genesis Crucible",
   "gtceu.assemblyhall": "Assembly Hall",
+  "gtceu.antimassspectro": "Anti-Mass Spectrometer",
 
   "block.gregecore.dyswarmoutput_machine": "Dyson Swarm Energy Output",
   "block.gregecore.dyswarmoutputeuclid_machine": "Euclid Dyson Swarm Energy Output",

@@ -13,6 +13,7 @@ import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMa
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
+import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.common.data.GCYMBlocks;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.endgame.RepairPartsInputPartMachine;
@@ -52,7 +53,7 @@ public class FornaxUniversi extends WorkableElectricMultiblockMachine implements
     private boolean needsRepair = false;
     private boolean hasTriggeredFailureThisRecipe = false;
     private static final int REPAIR_TIME_LIMIT = 100;
-    private static final int FAILURE_TRIGGER_TICK = 300;
+    private int failureTriggerTick;
     private static ItemStack[] requiredItems;
     private int whichItem;
     private final Random random = new Random();
@@ -115,7 +116,7 @@ public class FornaxUniversi extends WorkableElectricMultiblockMachine implements
 
             this.recipeTicks++;
 
-            if (!this.hasTriggeredFailureThisRecipe && this.recipeTicks >= FAILURE_TRIGGER_TICK) {
+            if (!this.hasTriggeredFailureThisRecipe && this.recipeTicks >= failureTriggerTick) {
                 this.needsRepair = true;
                 this.hasTriggeredFailureThisRecipe = true;
                 this.repairTimer = REPAIR_TIME_LIMIT;
@@ -131,6 +132,15 @@ public class FornaxUniversi extends WorkableElectricMultiblockMachine implements
         this.hasTriggeredFailureThisRecipe = false;
         getRandomRepairItem();
         super.afterWorking();
+    }
+
+    @Override
+    public boolean beforeWorking(@Nullable GTRecipe recipe) {
+
+        assert recipe != null;
+        this.failureTriggerTick = recipe.duration / 2;
+
+        return super.beforeWorking(recipe);
     }
 
     @Override

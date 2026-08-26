@@ -61,7 +61,7 @@ public class AntiMassSpectrometer extends WorkableElectricMultiblockMachine {
     public static MachineDefinition ANTIMASSSPECTROMETER = REGISTRATE
             .multiblock("antimass", AntiMassSpectrometer::new)
             .rotationState(RotationState.NON_Y_AXIS)
-            .recipeTypes(GTRecipeTypes.GAS_COLLECTOR_RECIPES, GTRecipeTypes.SIFTER_RECIPES, GregERecipeTypes.PLANETARGY_GAS_SIPHON, GregERecipeTypes.ZERO_GRAV_MIXER, GregERecipeTypes.SEDNASAMPLER, GregERecipeTypes.NETHERDRILLRIGRECIPE)
+            .recipeTypes(GTRecipeTypes.GAS_COLLECTOR_RECIPES, GTRecipeTypes.SIFTER_RECIPES, GregERecipeTypes.PLANETARGY_GAS_SIPHON, GregERecipeTypes.ZERO_GRAV_MIXER, GregERecipeTypes.SEDNASAMPLER, GregERecipeTypes.NETHERDRILLRIGRECIPE, GregERecipeTypes.AMSPECTROMETER)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT, GTRecipeModifiers.PARALLEL_HATCH)
             .appearanceBlock(GCYMBlocks.CASING_ATOMIC)
             .pattern(definition -> {

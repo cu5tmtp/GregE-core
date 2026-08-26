@@ -1,4 +1,4 @@
-// 1.20.1	2026-08-24T15:34:29.6979568	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2026-08-26T00:52:55.8444372	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 b3c78504318281555d96db9c7eab46d9091cf7bc assets/gregecore/blockstates/acceleratedebf.json
 624b7a3f9d408815e2f0474a1b95487f10f6ec43 assets/gregecore/blockstates/advanced_coolant_input_machine.json
 b5deca0f2f21cbbe20bf59893ff42cc80e314ab7 assets/gregecore/blockstates/advanced_heater_input_machine.json
@@ -36,6 +36,7 @@ cc0bd4fffcdaef0d7c4b1c4c4ef865e1c771b64b assets/gregecore/blockstates/forgotten_
 2e0a1936e7405f9a9055e02cec660c0c7a11c67f assets/gregecore/blockstates/fornaxuniversi.json
 3032c50a3c036396e1d371b2d05b118fc662fb39 assets/gregecore/blockstates/genesiscrucible.json
 48cf4bbceec3d0327cf99e81f818e59b44f3ead2 assets/gregecore/blockstates/genesiscruciblecaseone.json
+608c395fc69b03717c7d523b237cec02d935adba assets/gregecore/blockstates/genesiscruciblecasethree.json
 9b602d18f1238f3596012961aa5a3e141f4129ee assets/gregecore/blockstates/genesiscruciblecasetwo.json
 2f568c30e9e90dc8323da0d07536a3f0bad32be6 assets/gregecore/blockstates/giantabs.json
 01debd1f715479fc162486cc4620f189df521e2e assets/gregecore/blockstates/giantacceleratedebf.json
@@ -95,8 +96,8 @@ dbdaed3bea5ecadd222d9717e4234a6b4f394d3f assets/gregecore/blockstates/threading_
 8c9c4604d58077ce4cf9f78d22b5696d1f04c9c0 assets/gregecore/blockstates/threading_two_machine.json
 e5837a7a2f3ad102feb94b87b41c3d8c1b408d99 assets/gregecore/blockstates/twilight_coil.json
 1af622f1f41ecf9ca0b7f1da355673262c21dc57 assets/gregecore/blockstates/vibration_engine_intake.json
-6c80b1c529aab8f6d70a156a15fd6671f66d2c32 assets/gregecore/lang/en_ud.json
-216d7afa3833a5ed89c60665228712d0a80d13ce assets/gregecore/lang/en_us.json
+315e08ea45323d49b9d3886e9a783b522e21aa61 assets/gregecore/lang/en_ud.json
+4ce250b145938a9ad19dffd9f882cda1579a42c0 assets/gregecore/lang/en_us.json
 d0d40ce346a144fb0402f20755852211b19e9538 assets/gregecore/models/block/assembly_engine_intake.json
 a9561563c39e10400268c97ac9783bff175a3ca9 assets/gregecore/models/block/assembly_engine_intake_active.json
 efe345e03fe00196c60542bafe5b989e8c89f7c4 assets/gregecore/models/block/atomic_engine_intake.json
@@ -141,6 +142,7 @@ adec9153149a2d88d44643f999d51a440cbfd957 assets/gregecore/models/block/machine/f
 8a6017c2b18f17b0ae519c822599f9c376e17b5d assets/gregecore/models/block/machine/fornaxuniversi.json
 596ab3c46c5d8aec0533a4743eaeb96401c152d8 assets/gregecore/models/block/machine/genesiscrucible.json
 16bc10cd936d0d38023041ab2edefaf1b6bd3acb assets/gregecore/models/block/machine/genesiscruciblecaseone.json
+62e431bc538afc909bdb02facc6d100cfa66aa18 assets/gregecore/models/block/machine/genesiscruciblecasethree.json
 390db0f208f04a72d0841e2b89a0715d86fc2876 assets/gregecore/models/block/machine/genesiscruciblecasetwo.json
 c1709a9138f4a770bf98f5afd468d1986fd009c6 assets/gregecore/models/block/machine/giantabs.json
 a03c168e6486dd159e1351fc1b751e2f2f9ef700 assets/gregecore/models/block/machine/giantacceleratedebf.json
@@ -246,6 +248,7 @@ ff3bee43c480143493944e7c9ff85d2f4039b7a8 assets/gregecore/models/item/enhancedfr
 5099ab81b347b99bed18791a384c518d6c31a279 assets/gregecore/models/item/fornaxuniversi.json
 a308f5b018c10c1520fe22f4bede40b316991500 assets/gregecore/models/item/genesiscrucible.json
 ff86defd11b04626f302a831ae5660929a819297 assets/gregecore/models/item/genesiscruciblecaseone.json
+49fb13280c958fc1cc2725932e0e02c28d1eebe8 assets/gregecore/models/item/genesiscruciblecasethree.json
 d064c081b038571a55cc05963d86ce622f6302fd assets/gregecore/models/item/genesiscruciblecasetwo.json
 912873126e5e03a481e51e0edbae6195a95bef25 assets/gregecore/models/item/giantabs.json
 9272526de3a4d31b124064fad01d64e6344fcc71 assets/gregecore/models/item/giantacceleratedebf.json

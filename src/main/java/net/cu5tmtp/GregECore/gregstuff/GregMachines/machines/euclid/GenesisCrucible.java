@@ -206,7 +206,7 @@ public class GenesisCrucible extends WorkableElectricMultiblockMachine {
                     .append(Component.literal(case2 ? "Formed" : "Incomplete").withStyle(case2 ? ChatFormatting.GREEN : ChatFormatting.RED)));
 
             boolean case3 = caseStates.getOrDefault("genesiscruciblecasethree", false);
-            textList.add(Component.literal(" - Placeholder 3: ").withStyle(ChatFormatting.GRAY)
+            textList.add(Component.literal(" - Grympl: ").withStyle(ChatFormatting.GRAY)
                     .append(Component.literal(case3 ? "Formed" : "Incomplete").withStyle(case3 ? ChatFormatting.GREEN : ChatFormatting.RED)));
 
             boolean case4 = caseStates.getOrDefault("genesiscruciblecasefour", false);

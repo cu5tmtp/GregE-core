@@ -105,6 +105,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(GenesisCrucible.GENESISCRUCIBLE.getItem());
                         pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE1.getItem());
                         pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE2.getItem());
+                        pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE3.getItem());
                         pOutput.accept(AssemblyHall.ASSEMBLYHALL.getItem());
                         pOutput.accept(PrecisionFabricationArray.PFARRAY.getItem());
 

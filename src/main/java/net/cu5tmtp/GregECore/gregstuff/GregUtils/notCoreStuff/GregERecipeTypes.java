@@ -191,7 +191,7 @@ public class GregERecipeTypes {
                             String readableName = switch (internalName) {
                                 case "genesiscruciblecaseone" -> "D";
                                 case "genesiscruciblecasetwo" -> "K";
-                                case "genesiscruciblecasethree" -> "Placeholder 3";
+                                case "genesiscruciblecasethree" -> "G";
                                 case "genesiscruciblecasefour" -> "Placeholder 4";
                                 default -> internalName;
                             };
@@ -278,6 +278,12 @@ public class GregERecipeTypes {
             .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.JET_ENGINE)
             .addDataInfo(data -> ChatFormatting.RED + "Needs all 3 eyes inserted.");
+
+    public static GTRecipeType AMSPECTROMETER = GTRecipeTypes.register("antimassspectro", "halflife")
+            .setMaxIOSize(1,0, 0,1)
+            .setEUIO(IO.IN)
+            .setProgressBar(GregEGUITextures.AMSPEC, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.JET_ENGINE);
 
     public static GTRecipeType SEND_UP_THE_MATS = GTRecipeTypes.register("send_up_the_mats", "endgame")
             .setMaxIOSize(6,6, 3,3)
