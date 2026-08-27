@@ -11,6 +11,9 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
+import com.lowdragmc.lowdraglib.syncdata.annotation.DescSynced;
+import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.renderer.renderRegistries.GregERenederRegistries;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregERecipeTypes;
 import net.minecraft.ChatFormatting;
@@ -26,14 +29,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel;
 import static net.cu5tmtp.GregECore.gregstuff.GregUtils.GregECore.REGISTRATE;
 
 public class GenesisCrucible extends WorkableElectricMultiblockMachine {
 
+    protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
+            GenesisCrucible.class,
+            WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER);
+
+    @Override
+    public ManagedFieldHolder getFieldHolder() {
+        return MANAGED_FIELD_HOLDER;
+    }
+
     private TickableSubscription logicSubscription;
-    private final Map<String, Boolean> caseStates = new HashMap<>();
+
+    public final Map<String, Boolean> caseStates = new HashMap<>();
+    @DescSynced
+    public int activeCasesMask = 0;
     private record CaseOffset(int forward, int above, int right, String expectedName) {}
-    private String requiredCartridges;
 
     private final CaseOffset[] caseOffsets = new CaseOffset[]{
             new CaseOffset(6, 13, 10, "genesiscruciblecaseone"), // Front left
@@ -58,6 +73,7 @@ public class GenesisCrucible extends WorkableElectricMultiblockMachine {
     @Override
     public void onStructureInvalid() {
         this.caseStates.clear();
+        this.activeCasesMask = 0;
 
         if (this.logicSubscription != null) {
             this.logicSubscription.unsubscribe();
@@ -79,7 +95,10 @@ public class GenesisCrucible extends WorkableElectricMultiblockMachine {
         Direction forward = getFrontFacing();
         Direction right = forward.getClockWise();
 
-        for (CaseOffset offset : caseOffsets) {
+        int newMask = 0;
+
+        for (int i = 0; i < caseOffsets.length; i++) {
+            CaseOffset offset = caseOffsets[i];
             BlockPos targetPos = center.relative(forward, offset.forward())
                     .above(offset.above())
                     .relative(right, offset.right());
@@ -98,13 +117,19 @@ public class GenesisCrucible extends WorkableElectricMultiblockMachine {
             }
 
             this.caseStates.put(offset.expectedName(), isFormed);
+
+            if (isFormed) {
+                newMask |= (1 << i);
+            }
         }
+
+        this.activeCasesMask = newMask;
     }
 
     @Override
     public boolean beforeWorking(@Nullable GTRecipe recipe) {
         assert recipe != null;
-        requiredCartridges = recipe.data.getString("insertedc");
+        String requiredCartridges = recipe.data.getString("insertedc");
 
         if (!requiredCartridges.isEmpty()) {
             String[] parts = requiredCartridges.split(",");
@@ -184,9 +209,10 @@ public class GenesisCrucible extends WorkableElectricMultiblockMachine {
                         .where("z", Predicates.controller(Predicates.blocks(definition.get())))
                         .build();
             })
-            .workableCasingModel(
+            .model(createWorkableCasingMachineModel(
                     GregECore.id("block/machine_casing_tiled_gray"),
-                    GTCEu.id("gtceu:block/multiblock/distillation_tower")
+                    GTCEu.id("gtceu:block/multiblock/distillation_tower"))
+                    .andThen(b -> b.addDynamicRenderer(GregERenederRegistries::createGenesisCrucibleRender))
             )
             .register();
 

@@ -1,4 +1,4 @@
-// 1.20.1	2026-08-26T00:52:55.8444372	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2026-08-27T00:33:49.5086984	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 b3c78504318281555d96db9c7eab46d9091cf7bc assets/gregecore/blockstates/acceleratedebf.json
 624b7a3f9d408815e2f0474a1b95487f10f6ec43 assets/gregecore/blockstates/advanced_coolant_input_machine.json
 b5deca0f2f21cbbe20bf59893ff42cc80e314ab7 assets/gregecore/blockstates/advanced_heater_input_machine.json
@@ -140,7 +140,7 @@ cb69e6ee8c47b3cae4a45bbbab6f8c62dcfa6fab assets/gregecore/models/block/machine/e
 f8f4f95506670b4f37d6ba229f73f60bcfe01a16 assets/gregecore/models/block/machine/enhancedfr.json
 adec9153149a2d88d44643f999d51a440cbfd957 assets/gregecore/models/block/machine/fissionreactor.json
 8a6017c2b18f17b0ae519c822599f9c376e17b5d assets/gregecore/models/block/machine/fornaxuniversi.json
-596ab3c46c5d8aec0533a4743eaeb96401c152d8 assets/gregecore/models/block/machine/genesiscrucible.json
+603097361c65e4fc06fe86e725a8adc3512e33e5 assets/gregecore/models/block/machine/genesiscrucible.json
 16bc10cd936d0d38023041ab2edefaf1b6bd3acb assets/gregecore/models/block/machine/genesiscruciblecaseone.json
 62e431bc538afc909bdb02facc6d100cfa66aa18 assets/gregecore/models/block/machine/genesiscruciblecasethree.json
 390db0f208f04a72d0841e2b89a0715d86fc2876 assets/gregecore/models/block/machine/genesiscruciblecasetwo.json
