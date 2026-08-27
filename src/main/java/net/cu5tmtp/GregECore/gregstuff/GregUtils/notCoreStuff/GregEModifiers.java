@@ -9,6 +9,7 @@ import com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.chillers.BigFreezer;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.chillers.EnhancedBlastChiller;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.dyson.DysonSwarmEnergyCollector;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.euclid.QuantumSynergizer;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.AcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.GiantAcceleratedEBF;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.furnaces.LearningAcceleratedEBF;
@@ -210,6 +211,24 @@ public class GregEModifiers {
                 .parallels(parallelsAvailableEBC)
                 .modifyAllContents(ContentModifier.multiplier(parallelsAvailableEBC))
                 .durationMultiplier(speedModifier)
+                .build();
+    }
+
+    public static ModifierFunction quantumSynergizerBoost(MetaMachine machine, GTRecipe recipe){
+
+        if (!(machine instanceof QuantumSynergizer qs)) {
+            return ModifierFunction.NULL;
+        }
+
+        int combo = qs.getComboCount();
+        double speed = 1.0d;
+
+        if(combo == 3){
+            speed = 0.000001d;
+        }
+
+        return ModifierFunction.builder()
+                .durationMultiplier(speed)
                 .build();
     }
 

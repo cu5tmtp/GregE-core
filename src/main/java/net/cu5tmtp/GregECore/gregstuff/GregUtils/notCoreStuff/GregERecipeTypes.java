@@ -54,6 +54,12 @@ public class GregERecipeTypes {
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.FIRE);
+
+    public static GTRecipeType ROBOTICFABRICATION = GTRecipeTypes.register("robotic_fabrication", "euclid")
+            .setMaxIOSize(9,1,3,0)
+            .setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ASSEMBLER);
     
     public static GTRecipeType STAR_MAYKR_SINGULARITIES = GTRecipeTypes.register("star_maykr_singularities", "endgame")
             .setMaxIOSize(9,1,0,0)

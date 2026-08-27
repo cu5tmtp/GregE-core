@@ -56,6 +56,9 @@ public class GregERenederRegistries {
     public static final ResourceLocation GENESISC_ID =
             new ResourceLocation("gregecore", "genesiscruciblerender");
 
+    public static final ResourceLocation ROBOTICFABRICATOR_ID =
+            new ResourceLocation("gregecore", "roboticfabricatorender");
+
     public static DynamicRender<?, ?> createEnhancedFusionRingRender() {
         return new EnhancedFusionRingRender();
     }
@@ -83,6 +86,8 @@ public class GregERenederRegistries {
     public static DynamicRender<?, ?> createCathedralRender() { return new BloodCathedralRender(); }
     public static DynamicRender<?, ?> createGenesisCrucibleRender() { return new GCRender(); }
 
+    public static DynamicRender<?, ?> createRoboticFabricatorRender() { return new QuantumSynergizerRender(); }
+
 
 
     public static void init() {
@@ -103,6 +108,7 @@ public class GregERenederRegistries {
         DynamicRenderManager.register(PRESSURE_ID, PressureChamberRender.TYPE);
         DynamicRenderManager.register(CATHEDRAL_ID, BloodCathedralRender.TYPE);
         DynamicRenderManager.register(GENESISC_ID, GCRender.TYPE);
+        DynamicRenderManager.register(ROBOTICFABRICATOR_ID, QuantumSynergizerRender.TYPE);
 
         EnhancedFusionRingRender.init();
         StarMaykrRender.init();
@@ -120,5 +126,6 @@ public class GregERenederRegistries {
         PressureChamberRender.init();
         BloodCathedralRender.init();
         GCRender.init();
+        QuantumSynergizerRender.init();
     }
 }

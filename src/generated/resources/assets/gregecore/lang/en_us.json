@@ -50,8 +50,10 @@
   "block.gregecore.genesiscruciblecasetwo": "Genesis Crucible Cartridge: §dKamenium",
   "block.gregecore.genesiscruciblecasethree": "Genesis Crucible Cartridge: §dGrympl",
   "block.gregecore.pfarray": "§lPrecision Fabrication Array§g",
+  "block.gregecore.quantumsynergizer": "§lQuantum Synergizer§g",
 
   "gtceu.pfarraycraft": "Precision Fabrication Array",
+  "gtceu.roboticfabricator": "Quantum Time Dialation",
   "gtceu.recipe.cleanroom_dimensional.display_name": "Dimensional Simulator",
   "gtceu.infusion_altar_infusing": "Infusing",
   "gtceu.sascrafting": "Synthetizing",
@@ -157,6 +159,7 @@
   "item.gregecore.mediumblood": "Drop Of Blood",
   "item.gregecore.largeblood": "Large Drop Of Blood",
 
+  "item.gregecore.avaritia_wand_of_puppetry": "AVARITIA Wand of Awakening",
   "item.gregecore.wand_of_puppetry": "Wand of Awakening",
   "entity.gregecore.animated_block": "Awakened Block",
 
