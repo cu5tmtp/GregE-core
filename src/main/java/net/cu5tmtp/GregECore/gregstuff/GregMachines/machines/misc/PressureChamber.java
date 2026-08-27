@@ -21,6 +21,7 @@ import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.misc.PressurePartMachine;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.renderer.renderRegistries.GregERenederRegistries;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEModifiers;
+import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregEPredicates;
 import net.cu5tmtp.GregECore.gregstuff.GregUtils.notCoreStuff.GregERecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -104,7 +105,7 @@ public class PressureChamber extends WorkableElectricMultiblockMachine implement
             pressureSubscription = null;
         }
 
-        checkGlass();
+        this.maxPressure = GregEPredicates.getMaxGlassPressure(getMultiblockState().getMatchContext());
 
         pressureSubscription = this.subscribeServerTick(this::pressureChecker);
     }
@@ -115,6 +116,7 @@ public class PressureChamber extends WorkableElectricMultiblockMachine implement
             pressureSubscription.unsubscribe();
             pressureSubscription = null;
         }
+        this.maxPressure = 0;
         super.onStructureInvalid();
     }
 
@@ -166,52 +168,6 @@ public class PressureChamber extends WorkableElectricMultiblockMachine implement
         }
 
         this.updateSignal();
-    }
-
-    private void checkGlass() {
-        Level level = getLevel();
-        if (level == null || level.isClientSide) return;
-
-        this.leakage = false;
-        Set<Block> foundGlass = new HashSet<>();
-
-        Direction front = getFrontFacing();
-        Direction back = front.getOpposite();
-        Direction right = front.getCounterClockWise();
-
-        for (int y = 1; y <= 2; y++) {
-            for (int x = 0; x <= 3; x++) {
-                for (int z = 0; z <= 3; z++) {
-                    if ((x == 0 || x == 3) && (z == 0 || z == 3)) continue;
-                    if ((x == 1 || x == 2) && (z == 1 || z == 2)) continue;
-
-                    BlockPos targetPos = getPos().above(y).relative(right, x).relative(back, z);
-                    Block block = level.getBlockState(targetPos).getBlock();
-
-                    foundGlass.add(block);
-                }
-            }
-        }
-
-        if (foundGlass.size() != 1) {
-            this.leakage = true;
-            this.maxPressure = 0.0;
-            return;
-        }
-
-        Block glassBlock = foundGlass.iterator().next();
-        ResourceLocation registryKey = ForgeRegistries.BLOCKS.getKey(glassBlock);
-        String registryName = registryKey != null ? registryKey.toString() : "";
-
-        this.maxPressure = switch (registryName) {
-            case "gtceu:tempered_glass"  -> 30.0;
-            case "gtceu:laminated_glass" -> 60.0;
-            case "gtceu:fusion_glass"    -> 100.0;
-            default -> {
-                this.leakage = true;
-                yield 1.0;
-            }
-        };
     }
 
     private void explodeMachine() {
@@ -324,9 +280,7 @@ public class PressureChamber extends WorkableElectricMultiblockMachine implement
                                 .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
                                 .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
                                 .or(Predicates.abilities(PressurePartMachine.getPartAbility()).setMaxGlobalLimited(1).setPreviewCount(1)))
-                        .where("b", Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:tempered_glass")))
-                                .or(Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:laminated_glass"))))
-                                .or(Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:fusion_glass")))))
+                        .where("b", GregEPredicates.pressureGlass())
                         .where("c", Predicates.any())
                         .where('h', Predicates.controller(blocks(definition.getBlock())))
                         .build();

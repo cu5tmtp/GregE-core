@@ -74,6 +74,8 @@
   "gtceu.assemblyhall": "Assembly Hall",
   "gtceu.antimassspectro": "Anti-Mass Spectrometer",
 
+  "gregecore.error.glass": "All of the glass must be the same.",
+
   "block.gregecore.dyswarmoutput_machine": "Dyson Swarm Energy Output",
   "block.gregecore.dyswarmoutputeuclid_machine": "Euclid Dyson Swarm Energy Output",
   "block.gregecore.dimension_maintenance_hatch": "Dimensional Simulator Maintenance Hatch",
