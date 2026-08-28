@@ -18,6 +18,8 @@ public class AVARITIAWandOfPuppetry extends Item {
     public AVARITIAWandOfPuppetry(Properties properties) {
         super(properties);
         allowedBlocks.add("avaritia:infinity");
+        allowedBlocks.add("gtceu:neutronium_block");
+        allowedBlocks.add("gtceu:nebulon_alpha_block");
     }
 
     @Override

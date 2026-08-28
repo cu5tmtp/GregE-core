@@ -56,7 +56,7 @@ public class GregERecipeTypes {
             .setSound(GTSoundEntries.FIRE);
 
     public static GTRecipeType ROBOTICFABRICATION = GTRecipeTypes.register("robotic_fabrication", "euclid")
-            .setMaxIOSize(9,1,3,0)
+            .setMaxIOSize(21,1,0,0)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ASSEMBLER);
@@ -198,7 +198,7 @@ public class GregERecipeTypes {
                                 case "genesiscruciblecaseone" -> "D";
                                 case "genesiscruciblecasetwo" -> "K";
                                 case "genesiscruciblecasethree" -> "G";
-                                case "genesiscruciblecasefour" -> "Placeholder 4";
+                                case "genesiscruciblecasefour" -> "X";
                                 default -> internalName;
                             };
 

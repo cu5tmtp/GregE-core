@@ -1,4 +1,4 @@
-// 1.20.1	2026-08-27T21:10:04.8561649	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2026-08-28T01:49:16.7493638	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 b3c78504318281555d96db9c7eab46d9091cf7bc assets/gregecore/blockstates/acceleratedebf.json
 624b7a3f9d408815e2f0474a1b95487f10f6ec43 assets/gregecore/blockstates/advanced_coolant_input_machine.json
 b5deca0f2f21cbbe20bf59893ff42cc80e314ab7 assets/gregecore/blockstates/advanced_heater_input_machine.json
@@ -35,6 +35,7 @@ c262abfa7c43b5b4732d5534661d88f63ff4d697 assets/gregecore/blockstates/fissionrea
 cc0bd4fffcdaef0d7c4b1c4c4ef865e1c771b64b assets/gregecore/blockstates/forgotten_coil.json
 2e0a1936e7405f9a9055e02cec660c0c7a11c67f assets/gregecore/blockstates/fornaxuniversi.json
 3032c50a3c036396e1d371b2d05b118fc662fb39 assets/gregecore/blockstates/genesiscrucible.json
+70a94b35b441afd8b58d16cc06029ba95665094b assets/gregecore/blockstates/genesiscruciblecasefour.json
 48cf4bbceec3d0327cf99e81f818e59b44f3ead2 assets/gregecore/blockstates/genesiscruciblecaseone.json
 608c395fc69b03717c7d523b237cec02d935adba assets/gregecore/blockstates/genesiscruciblecasethree.json
 9b602d18f1238f3596012961aa5a3e141f4129ee assets/gregecore/blockstates/genesiscruciblecasetwo.json
@@ -97,8 +98,8 @@ dbdaed3bea5ecadd222d9717e4234a6b4f394d3f assets/gregecore/blockstates/threading_
 8c9c4604d58077ce4cf9f78d22b5696d1f04c9c0 assets/gregecore/blockstates/threading_two_machine.json
 e5837a7a2f3ad102feb94b87b41c3d8c1b408d99 assets/gregecore/blockstates/twilight_coil.json
 1af622f1f41ecf9ca0b7f1da355673262c21dc57 assets/gregecore/blockstates/vibration_engine_intake.json
-17fb99d1c7b9751fc62d90d075708f10fbaa8f24 assets/gregecore/lang/en_ud.json
-52c1563a39a64a00d3844bb9fb599c2dec6b8696 assets/gregecore/lang/en_us.json
+f88f9e1ea5413721bdef78ea60b091fabaed8463 assets/gregecore/lang/en_ud.json
+32056fb710a2ee8e2cae0be41fd3db18475571ee assets/gregecore/lang/en_us.json
 d0d40ce346a144fb0402f20755852211b19e9538 assets/gregecore/models/block/assembly_engine_intake.json
 a9561563c39e10400268c97ac9783bff175a3ca9 assets/gregecore/models/block/assembly_engine_intake_active.json
 efe345e03fe00196c60542bafe5b989e8c89f7c4 assets/gregecore/models/block/atomic_engine_intake.json
@@ -142,6 +143,7 @@ f8f4f95506670b4f37d6ba229f73f60bcfe01a16 assets/gregecore/models/block/machine/e
 adec9153149a2d88d44643f999d51a440cbfd957 assets/gregecore/models/block/machine/fissionreactor.json
 8a6017c2b18f17b0ae519c822599f9c376e17b5d assets/gregecore/models/block/machine/fornaxuniversi.json
 603097361c65e4fc06fe86e725a8adc3512e33e5 assets/gregecore/models/block/machine/genesiscrucible.json
+5b113fe5ec3f946e6b2a99fb7260ed036f28e7fb assets/gregecore/models/block/machine/genesiscruciblecasefour.json
 16bc10cd936d0d38023041ab2edefaf1b6bd3acb assets/gregecore/models/block/machine/genesiscruciblecaseone.json
 62e431bc538afc909bdb02facc6d100cfa66aa18 assets/gregecore/models/block/machine/genesiscruciblecasethree.json
 390db0f208f04a72d0841e2b89a0715d86fc2876 assets/gregecore/models/block/machine/genesiscruciblecasetwo.json
@@ -249,6 +251,7 @@ ff3bee43c480143493944e7c9ff85d2f4039b7a8 assets/gregecore/models/item/enhancedfr
 04ebd1d56259bd9f49206fd9d078c33d75ff9a93 assets/gregecore/models/item/forgotten_coil.json
 5099ab81b347b99bed18791a384c518d6c31a279 assets/gregecore/models/item/fornaxuniversi.json
 a308f5b018c10c1520fe22f4bede40b316991500 assets/gregecore/models/item/genesiscrucible.json
+938b232d815cb6a5a2b1be179a261de1d0b1a44d assets/gregecore/models/item/genesiscruciblecasefour.json
 ff86defd11b04626f302a831ae5660929a819297 assets/gregecore/models/item/genesiscruciblecaseone.json
 49fb13280c958fc1cc2725932e0e02c28d1eebe8 assets/gregecore/models/item/genesiscruciblecasethree.json
 d064c081b038571a55cc05963d86ce622f6302fd assets/gregecore/models/item/genesiscruciblecasetwo.json

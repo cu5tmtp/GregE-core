@@ -74,7 +74,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.TINYBLOOD.get());
                         pOutput.accept(ModItems.MEDIUMBLOOD.get());
                         pOutput.accept(ModItems.LARGEBLOOD.get());
-                        pOutput.accept(ModItems.WAND_OF_PUPPETRY.get());
+                        //pOutput.accept(ModItems.WAND_OF_PUPPETRY.get());
                         pOutput.accept(ModItems.AVARITIA_WAND_OF_PUPPETRY.get());
                         pOutput.accept(AcceleratedEBF.ACCELERATEDEBF.getItem());
                         pOutput.accept(GiantAcceleratedEBF.GIANTACCELERATEDEBF.getItem());
@@ -105,6 +105,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE1.getItem());
                         pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE2.getItem());
                         pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE3.getItem());
+                        pOutput.accept(GenesisCrucibleCases.GENESISCRUCIBLECASE4.getItem());
                         pOutput.accept(AssemblyHall.ASSEMBLYHALL.getItem());
                         pOutput.accept(PrecisionFabricationArray.PFARRAY.getItem());
 

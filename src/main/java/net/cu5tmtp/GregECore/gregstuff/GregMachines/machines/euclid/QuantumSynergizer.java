@@ -56,9 +56,7 @@ public class QuantumSynergizer extends WorkableElectricMultiblockMachine {
     public boolean beforeWorking(@Nullable GTRecipe recipe) {
 
         assert recipe != null;
-        GTRecipe workingRecipe = recipe.copy();
-
-        String currentRecipeId = workingRecipe.id != null ? workingRecipe.id.toString() : "";
+        String currentRecipeId = recipe.id != null ? recipe.id.toString() : "";
 
         if (this.comboCount >= 3) {
             this.comboCount = 0;
@@ -97,10 +95,7 @@ public class QuantumSynergizer extends WorkableElectricMultiblockMachine {
                         .where("a", Predicates.any())
                         .where("b", Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:nonconducting_casing")))
                                 .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
-                                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(2).setPreviewCount(1))
-                                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
-                                .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(2).setPreviewCount(1))
-                                .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2).setPreviewCount(2)))
+                                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1)))
                         .where("c", Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:stress_proof_casing"))))
                         .where("d", Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:blue_steel_frame"))))
                         .where("e", Predicates.blocks(ForgeRegistries.BLOCKS.getValue(ResourceLocation.parse("gtceu:large_scale_assembler_casing"))))

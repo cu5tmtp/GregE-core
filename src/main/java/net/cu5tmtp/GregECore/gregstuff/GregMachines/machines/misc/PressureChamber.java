@@ -15,6 +15,7 @@ import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.transfer.fluid.FluidHandlerList;
 import com.gregtechceu.gtceu.common.data.GCYMBlocks;
+import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
@@ -269,7 +270,7 @@ public class PressureChamber extends WorkableElectricMultiblockMachine implement
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GregERecipeTypes.PRESSURECHAMCRAFT)
             .recipeModifiers(GregEModifiers::presureChamberBoost)
-            .appearanceBlock(GCYMBlocks.CASING_ATOMIC)
+            .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("aaaa", "abba", "abba", "aaaa")

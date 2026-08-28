@@ -49,11 +49,12 @@
   "block.gregecore.genesiscruciblecaseone": "Genesis Crucible Cartridge: §dDelirium",
   "block.gregecore.genesiscruciblecasetwo": "Genesis Crucible Cartridge: §dKamenium",
   "block.gregecore.genesiscruciblecasethree": "Genesis Crucible Cartridge: §dGrympl",
+  "block.gregecore.genesiscruciblecasefour": "Genesis Crucible Cartridge: §dXynredar",
   "block.gregecore.pfarray": "§lPrecision Fabrication Array§g",
   "block.gregecore.quantumsynergizer": "§lQuantum Synergizer§g",
 
   "gtceu.pfarraycraft": "Precision Fabrication Array",
-  "gtceu.roboticfabricator": "Quantum Time Dialation",
+  "gtceu.robotic_fabrication": "Quantum Time Dialation",
   "gtceu.recipe.cleanroom_dimensional.display_name": "Dimensional Simulator",
   "gtceu.infusion_altar_infusing": "Infusing",
   "gtceu.sascrafting": "Synthetizing",

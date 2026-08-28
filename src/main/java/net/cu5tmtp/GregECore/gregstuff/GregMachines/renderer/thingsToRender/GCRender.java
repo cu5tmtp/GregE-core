@@ -50,7 +50,7 @@ public class GCRender extends DynamicRender<GenesisCrucible, GCRender> {
             new CaseConfig("genesiscruciblecaseone", 4, 17, 10, 0.05f, 0.05f, 0.05f),
             new CaseConfig("genesiscruciblecasetwo", 4, 17, -10, 1.0f, 1.0f, 0.0f),
             new CaseConfig("genesiscruciblecasethree", -16, 17, -10, 1.0f, 1.0f, 0.0f),
-            new CaseConfig("genesiscruciblecasefour", -16, 17, 10, 1.0f, 0.8f, 0.2f)
+            new CaseConfig("genesiscruciblecasefour", -16, 17, 10, 0.2f, 1.0f, 0.2f)
     };
 
     public GCRender() {}
