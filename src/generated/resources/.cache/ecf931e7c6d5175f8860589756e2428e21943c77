@@ -1,4 +1,4 @@
-// 1.20.1	2026-08-28T01:49:16.7493638	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2026-08-28T20:58:33.7355024	Registrate Provider for gregecore [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 b3c78504318281555d96db9c7eab46d9091cf7bc assets/gregecore/blockstates/acceleratedebf.json
 624b7a3f9d408815e2f0474a1b95487f10f6ec43 assets/gregecore/blockstates/advanced_coolant_input_machine.json
 b5deca0f2f21cbbe20bf59893ff42cc80e314ab7 assets/gregecore/blockstates/advanced_heater_input_machine.json
@@ -31,6 +31,7 @@ c48b3a1afecf8664dec91c5b7bb5b2f2a454b25b assets/gregecore/blockstates/coolant_in
 05d584365799ee5630d80e752ab6a0ded5035e05 assets/gregecore/blockstates/dyswarmoutput_machine.json
 53a2de72fb88c053cf1cab631c94efaccb54a654 assets/gregecore/blockstates/enhancedblastchiller.json
 b0c6bd2063350bdce5ef763d448d046ecc27f1d0 assets/gregecore/blockstates/enhancedfr.json
+113437e3ce10bb3713e4d864ca0b9de04f6412d2 assets/gregecore/blockstates/epic_parallel_hatch.json
 c262abfa7c43b5b4732d5534661d88f63ff4d697 assets/gregecore/blockstates/fissionreactor.json
 cc0bd4fffcdaef0d7c4b1c4c4ef865e1c771b64b assets/gregecore/blockstates/forgotten_coil.json
 2e0a1936e7405f9a9055e02cec660c0c7a11c67f assets/gregecore/blockstates/fornaxuniversi.json
@@ -98,8 +99,8 @@ dbdaed3bea5ecadd222d9717e4234a6b4f394d3f assets/gregecore/blockstates/threading_
 8c9c4604d58077ce4cf9f78d22b5696d1f04c9c0 assets/gregecore/blockstates/threading_two_machine.json
 e5837a7a2f3ad102feb94b87b41c3d8c1b408d99 assets/gregecore/blockstates/twilight_coil.json
 1af622f1f41ecf9ca0b7f1da355673262c21dc57 assets/gregecore/blockstates/vibration_engine_intake.json
-f88f9e1ea5413721bdef78ea60b091fabaed8463 assets/gregecore/lang/en_ud.json
-32056fb710a2ee8e2cae0be41fd3db18475571ee assets/gregecore/lang/en_us.json
+6c9b94794d420f452e43181d9ddaf4174b3e9876 assets/gregecore/lang/en_ud.json
+444fae70ae6b24e94fcf3a2e9fe02b30ab44a8ae assets/gregecore/lang/en_us.json
 d0d40ce346a144fb0402f20755852211b19e9538 assets/gregecore/models/block/assembly_engine_intake.json
 a9561563c39e10400268c97ac9783bff175a3ca9 assets/gregecore/models/block/assembly_engine_intake_active.json
 efe345e03fe00196c60542bafe5b989e8c89f7c4 assets/gregecore/models/block/atomic_engine_intake.json
@@ -140,6 +141,7 @@ ea58b4a643663ac6b209f88187182a951e1bf63b assets/gregecore/models/block/machine/d
 f284b43348c536d8d0f4366cb79a30254efcc0b8 assets/gregecore/models/block/machine/dyswarmoutput_machine.json
 cb69e6ee8c47b3cae4a45bbbab6f8c62dcfa6fab assets/gregecore/models/block/machine/enhancedblastchiller.json
 f8f4f95506670b4f37d6ba229f73f60bcfe01a16 assets/gregecore/models/block/machine/enhancedfr.json
+1309b21d2ef577bf3eea75f1c75c66c97028f49d assets/gregecore/models/block/machine/epic_parallel_hatch.json
 adec9153149a2d88d44643f999d51a440cbfd957 assets/gregecore/models/block/machine/fissionreactor.json
 8a6017c2b18f17b0ae519c822599f9c376e17b5d assets/gregecore/models/block/machine/fornaxuniversi.json
 603097361c65e4fc06fe86e725a8adc3512e33e5 assets/gregecore/models/block/machine/genesiscrucible.json
@@ -247,6 +249,7 @@ a3489067fe544f364cddf507b69e9724a2433835 assets/gregecore/models/item/dyswarmout
 9352de9cea076a72574cd7a3de1cc736a14af38f assets/gregecore/models/item/dyswarmoutput_machine.json
 685432e5d7ff47d77f83f447beb698339be560a4 assets/gregecore/models/item/enhancedblastchiller.json
 ff3bee43c480143493944e7c9ff85d2f4039b7a8 assets/gregecore/models/item/enhancedfr.json
+227f5079d8ae58d4405b7903f41de1e59daf9fc6 assets/gregecore/models/item/epic_parallel_hatch.json
 53078a41a4ebfcad5572332f317a6131df629c2b assets/gregecore/models/item/fissionreactor.json
 04ebd1d56259bd9f49206fd9d078c33d75ff9a93 assets/gregecore/models/item/forgotten_coil.json
 5099ab81b347b99bed18791a384c518d6c31a279 assets/gregecore/models/item/fornaxuniversi.json

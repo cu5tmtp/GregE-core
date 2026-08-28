@@ -114,11 +114,11 @@ public class QuantumSynergizer extends WorkableElectricMultiblockMachine {
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
             .tooltips(Component.literal("Abilities: Combo Crafting").withStyle(style -> style.withColor(0xFFD700)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
-            .tooltips(Component.literal("This machine collects unused quantum crafting energy from completed craft, " +
-                    "then it uses it on the next crafting recipe.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("This machine harvests residual quantum energy from completed crafts " +
+                    "and applies it to the next operation.").withStyle(style -> style.withColor(0x90EE90)))
             .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
-            .tooltips(Component.literal("Every completed crafting recipe gives this machine 1 combo point. Collect 3 combo points, and the next crafting recipe will " +
-                    "be instantly completed.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("Each completed recipe generates 1 Combo Point. Upon reaching 3 Combo Points, " +
+                    "the next recipe will finish instantly.").withStyle(style -> style.withColor(0x90EE90)))
             .register();
 
     @Override

@@ -16,6 +16,7 @@ import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.reactors.EnhancedFu
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.reactors.FissionReactor;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.reactors.GiantChemicalReactor;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.single.DimensionalCleaningMaintenance;
+import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.single.EpicParallelControllHatch;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.machines.uhvmulti.UHVMultiRegistry;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.coolant.AdvancedCoolantInputPartMachine;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.coolant.CoolantInputPartMachine;
@@ -96,6 +97,7 @@ public class GregEStuffInit {
         BloodStoragePartMachine.init();
         DysonSwarmEnergyOutputPartMachine.init();
         DysonSwarmEuclidEnergyOutputPartMachine.init();
+        EpicParallelControllHatch.init();
     }
 
     public static void initHPCAParts(){

@@ -131,6 +131,7 @@
   "block.gregecore.grege_heat_sink_component": "Greg-E Active Cooling Component",
   "block.gregecore.grege_computation_component": "Greg-E Computation Component",
   "block.gregecore.dimensional_filter_casing": "Dimensional Filter Casing",
+  "block.gregecore.epic_parallel_hatch": "Epic Parallel Controll Hatch",
 
   "item.gregecore.energy_bacteria": "Energy Bacteria",
   "item.gregecore.parallel_bacteria": "Parallel Bacteria",

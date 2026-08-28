@@ -48,13 +48,39 @@ public class GenesisCrucible extends WorkableElectricMultiblockMachine {
     public final Map<String, Boolean> caseStates = new HashMap<>();
     @DescSynced
     public int activeCasesMask = 0;
-    private record CaseOffset(int forward, int above, int right, String expectedName) {}
 
-    private final CaseOffset[] caseOffsets = new CaseOffset[]{
-            new CaseOffset(6, 13, 10, "genesiscruciblecaseone"), // Front left
-            new CaseOffset(6, 13, -10, "genesiscruciblecasetwo"), // Front right
-            new CaseOffset(-18, 13, -10, "genesiscruciblecasethree"), // Back right
-            new CaseOffset(-18, 13, 10, "genesiscruciblecasefour") // Back left
+    private record PosOffset(int forward, int above, int right) {}
+    private record CaseGroup(String expectedName, PosOffset[] offsets) {}
+
+    private final CaseGroup[] caseGroups = new CaseGroup[]{
+            // Front left
+            new CaseGroup("genesiscruciblecaseone", new PosOffset[]{
+                    new PosOffset(6, 13, 10),
+                    new PosOffset(4, 13, 8),
+                    new PosOffset(4, 13, 12),
+                    new PosOffset(2, 13, 10)
+            }),
+            // Front right (Přední Pravá)
+            new CaseGroup("genesiscruciblecasetwo", new PosOffset[]{
+                    new PosOffset(6, 13, -10),   // 0. Hlavní
+                    new PosOffset(4, 13, -12),   // 1. Doleva 2, dozadu 2
+                    new PosOffset(4, 13, -8),    // 2. Doprava 2, dozadu 2
+                    new PosOffset(2, 13, -10)    // 3. Dozadu 4
+            }),
+            // Back right (Zadní Pravá) - Opačná logika (místo dozadu jdeme dopředu směrem ke středu mašiny)
+            new CaseGroup("genesiscruciblecasethree", new PosOffset[]{
+                    new PosOffset(-18, 13, -10), // 0. Hlavní
+                    new PosOffset(-16, 13, -12), // 1. Doleva 2, dopředu 2
+                    new PosOffset(-16, 13, -8),  // 2. Doprava 2, dopředu 2
+                    new PosOffset(-14, 13, -10)  // 3. Dopředu 4
+            }),
+            // Back left (Zadní Levá) - Opačná logika
+            new CaseGroup("genesiscruciblecasefour", new PosOffset[]{
+                    new PosOffset(-18, 13, 10),  // 0. Hlavní
+                    new PosOffset(-16, 13, 8),   // 1. Doleva 2, dopředu 2
+                    new PosOffset(-16, 13, 12),  // 2. Doprava 2, dopředu 2
+                    new PosOffset(-14, 13, 10)   // 3. Dopředu 4
+            })
     };
 
     public GenesisCrucible(IMachineBlockEntity holder, Object... args) {
@@ -97,28 +123,37 @@ public class GenesisCrucible extends WorkableElectricMultiblockMachine {
 
         int newMask = 0;
 
-        for (int i = 0; i < caseOffsets.length; i++) {
-            CaseOffset offset = caseOffsets[i];
-            BlockPos targetPos = center.relative(forward, offset.forward())
-                    .above(offset.above())
-                    .relative(right, offset.right());
+        for (int i = 0; i < caseGroups.length; i++) {
+            CaseGroup group = caseGroups[i];
+            boolean anyPartFormed = false; // Změna: Předpokládáme, že není zformovaný žádný, dokud jeden nenajdeme
 
-            boolean isFormed = false;
+            // Projdeme všechny 4 souřadnice pro daný roh
+            for (PosOffset offset : group.offsets()) {
+                BlockPos targetPos = center.relative(forward, offset.forward())
+                        .above(offset.above())
+                        .relative(right, offset.right());
 
-            if (getLevel().getBlockEntity(targetPos) instanceof IMachineBlockEntity mbe) {
-                if (mbe.getMetaMachine() instanceof GenesisCrucibleCases crucibleCase) {
+                boolean partFormed = false;
 
-                    String actualName = crucibleCase.getDefinition().getName();
-
-                    if (actualName.equals(offset.expectedName())) {
-                        isFormed = crucibleCase.isFormed();
+                if (getLevel().getBlockEntity(targetPos) instanceof IMachineBlockEntity mbe) {
+                    if (mbe.getMetaMachine() instanceof GenesisCrucibleCases crucibleCase) {
+                        String actualName = crucibleCase.getDefinition().getName();
+                        if (actualName.equals(group.expectedName())) {
+                            partFormed = crucibleCase.isFormed();
+                        }
                     }
+                }
+
+                // Pokud najdeme alespoň jeden zformovaný case na správném místě, roh funguje
+                if (partFormed) {
+                    anyPartFormed = true;
+                    break;
                 }
             }
 
-            this.caseStates.put(offset.expectedName(), isFormed);
+            this.caseStates.put(group.expectedName(), anyPartFormed);
 
-            if (isFormed) {
+            if (anyPartFormed) {
                 newMask |= (1 << i);
             }
         }
@@ -214,6 +249,19 @@ public class GenesisCrucible extends WorkableElectricMultiblockMachine {
                     GTCEu.id("gtceu:block/multiblock/distillation_tower"))
                     .andThen(b -> b.addDynamicRenderer(GregERenederRegistries::createGenesisCrucibleRender))
             )
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("Abilities: Cartridge Charging").withStyle(style -> style.withColor(0xFFD700)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("This machine is not strong enough on its own to operate at this voltage, so it needs help " +
+                    "with processing components. Each cartridge unlocks new recipes.").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("----------------------------------------").withStyle(s -> s.withColor(0xff0000)))
+            .tooltips(Component.literal("Cartridges in crafting recipes are marked:").withStyle(style -> style.withColor(0x90EE90)))
+            .tooltips(Component.literal("D for Delirium").withStyle(ChatFormatting.LIGHT_PURPLE))
+            .tooltips(Component.literal("K for Kamenium").withStyle(ChatFormatting.LIGHT_PURPLE))
+            .tooltips(Component.literal("G for Grympl").withStyle(ChatFormatting.LIGHT_PURPLE))
+            .tooltips(Component.literal("X for Xynredar").withStyle(ChatFormatting.LIGHT_PURPLE))
+            .tooltips(Component.literal("Cartridge multiblocks have a different colored casing on its upper and lower parts, " +
+                    "find the same color on Genesis Crucible and form it there.").withStyle(style -> style.withColor(0x90EE90)))
             .register();
 
     @Override
