@@ -68,7 +68,7 @@ public class AutomaticAssemblyLine extends WorkableElectricMultiblockMachine {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT)
-            .appearanceBlock(GCYMBlocks.CASING_ATOMIC)
+            .appearanceBlock(GCYMBlocks.CASING_LARGE_SCALE_ASSEMBLING)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("aaabbbaaa", "cccbbbccc", "dddbbbddd", "dddbbbddd", "dddbbbddd", "cicbbbcic", "dddbbbddd", "dddbbbddd", "dddbbbddd", "cccbbbccc", "aaabbbaaa")

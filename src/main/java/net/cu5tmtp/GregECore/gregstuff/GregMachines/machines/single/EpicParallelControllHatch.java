@@ -23,7 +23,7 @@ public class EpicParallelControllHatch {
                     .rotationState(RotationState.ALL)
                     .abilities(PartAbility.PARALLEL_HATCH)
                     .tooltips(Component.literal("Allows to run up to 1024 recipes in parallel.").withStyle(ChatFormatting.WHITE),
-                            Component.literal("Multiblock sharing" + ChatFormatting.DARK_RED + "Disabled"))
+                            Component.literal("Multiblock sharing" + ChatFormatting.DARK_RED + " Disabled"))
                     .tier(GTValues.UHV)
                     .colorOverlayTieredHullModel(GregECore.id("block/overlay/parallelnormal/overlay_front"))
                     .register();

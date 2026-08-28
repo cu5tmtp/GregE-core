@@ -13,6 +13,7 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.transfer.fluid.FluidHandlerList;
+import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.utils.GTTransferUtils;
@@ -174,7 +175,7 @@ public class GiantAcceleratedEBF extends WorkableElectricMultiblockMachine {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTRecipeTypes.BLAST_RECIPES)
             .recipeModifiers(GregEModifiers::giantAcceleratedEBFModifier, GTRecipeModifiers.OC_PERFECT)
-            .appearanceBlock(CASING_INVAR_HEATPROOF)
+            .appearanceBlock(FIREBOX_TUNGSTENSTEEL)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("BFFFB", "G   G", "G   G", "G   G", "G   G", "G   G", "BFFFB")

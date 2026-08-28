@@ -99,7 +99,7 @@ public class EnhancedBlastChiller extends WorkableElectricMultiblockMachine {
             .rotationState(RotationState.ALL)
             .recipeType(GTRecipeTypes.VACUUM_RECIPES)
             .recipeModifiers(GregEModifiers::enhancedBlastChillerCoreBoost, GTRecipeModifiers.OC_PERFECT)
-            .appearanceBlock(CASING_INVAR_HEATPROOF)
+            .appearanceBlock(CASING_ALUMINIUM_FROSTPROOF)
             .pattern(definition -> {
                 return FactoryBlockPattern.start(RIGHT, UP, BACK)
                         .aisle("BBBBB", "BDBDB", "BBABB", "BDBDB", "BBBBB")

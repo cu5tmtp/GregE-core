@@ -63,7 +63,7 @@ public class AntiMassSpectrometer extends WorkableElectricMultiblockMachine {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeTypes(GTRecipeTypes.GAS_COLLECTOR_RECIPES, GTRecipeTypes.SIFTER_RECIPES, GregERecipeTypes.PLANETARGY_GAS_SIPHON, GregERecipeTypes.ZERO_GRAV_MIXER, GregERecipeTypes.SEDNASAMPLER, GregERecipeTypes.NETHERDRILLRIGRECIPE, GregERecipeTypes.AMSPECTROMETER)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT, GTRecipeModifiers.PARALLEL_HATCH)
-            .appearanceBlock(GCYMBlocks.CASING_ATOMIC)
+            .appearanceBlock(GCYMBlocks.CASING_SHOCK_PROOF)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("aaaabbbaaaa", "aaaaacaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaaaaaaaa", "aaaaacaaaaa", "aaaabbbaaaa")

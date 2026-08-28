@@ -30,7 +30,8 @@ public class BacteriaInputPartMachine extends ItemBusPartMachine {
                     new BacteriaInputPartMachine(holder, GTValues.ULV))
             .rotationState(RotationState.NON_Y_AXIS)
             .abilities(BacteriaInputPartMachine.BACTERIA_INPUT)
-            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"), GregECore.id("block/overlay/feeder"))
+            .tier(GTValues.ZPM)
+            .colorOverlayTieredHullModel(GregECore.id("block/overlay/feeder/overlay_front"))
             .tooltips(Component.literal("Use this to input bacteria, which will be used to boost recipes.").withStyle(ChatFormatting.LIGHT_PURPLE))
             .register();
 

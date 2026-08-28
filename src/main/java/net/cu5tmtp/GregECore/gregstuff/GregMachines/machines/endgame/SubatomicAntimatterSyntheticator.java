@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMa
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
+import com.gregtechceu.gtceu.common.data.GCYMBlocks;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.threadParts.ThreadT3PartMachine;
@@ -37,7 +38,7 @@ public class SubatomicAntimatterSyntheticator extends WorkableElectricMultiblock
             .rotationState(RotationState.ALL)
             .recipeType(GregERecipeTypes.SASCRAFTING)
             .recipeModifier(GTRecipeModifiers.OC_NON_PERFECT)
-            .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+            .appearanceBlock(GCYMBlocks.CASING_SECURE_MACERATION)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("aabbbaaaaaaaaaaaaabbbaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aabbbaaaaaaaaaaaaabbbaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aabbbaaaaaaaaaaaaabbbaa", "aaaaabaaabaaabaaabaaaaa", "aaaaabaaabaaabaaabaaaaa", "aaaaabaaabaaabaaabaaaaa", "aabbbaaaaaaaaaaaaabbbaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aabbbaaaaaaaaaaaaabbbaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaa", "aabbbaaaaaaaaaaaaabbbaa")
                     .aisle("abdddbbbaaaaaaabbbdddba", "aaefeaaaaaaaaaaaaaefeaa", "aaefeaaaaaaaaaaaaaefeaa", "aaefeaaaaaaaaaaaaaefeaa", "abdddbaaaaaaaaaaabdddba", "aaefeaaaaaaaaaaaaaefeaa", "aaefeaaaaaaaaaaaaaefeaa", "aaefeaaaaaaaaaaaaaefeaa", "abdddbaaabaaabaaabdddba", "aagggdeeedgggdeeedgggaa", "aagggdfffdgggdfffdgggaa", "aagggdeeedgggdeeedgggaa", "abdddbaaabaaabaaabdddba", "aaefeaaaaaaaaaaaaaefeaa", "aaefeaaaaaaaaaaaaaefeaa", "aaefeaaaaaaaaaaaaaefeaa", "abdddbaaaaaaaaaaabdddba", "aaefeaaaaaaaaaaaaaefeaa", "aaefeaaaaaaaaaaaaaefeaa", "aaefeaaaaaaaaaaaaaefeaa", "abdddbbbaaaaaaabbbdddba")

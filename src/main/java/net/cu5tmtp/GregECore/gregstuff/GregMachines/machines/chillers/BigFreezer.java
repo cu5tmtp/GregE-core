@@ -162,7 +162,7 @@ public class BigFreezer extends WorkableElectricMultiblockMachine {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTRecipeTypes.VACUUM_RECIPES)
             .recipeModifiers(GregEModifiers::bigFreezerBoost, GTRecipeModifiers.OC_PERFECT)
-            .appearanceBlock(CASING_INVAR_HEATPROOF)
+            .appearanceBlock(CASING_ALUMINIUM_FROSTPROOF)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("BBBBB", "GCCCG", "GCCCG", "GCCCG", "BBBBB")

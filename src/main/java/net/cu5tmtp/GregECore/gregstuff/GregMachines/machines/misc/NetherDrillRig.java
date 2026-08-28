@@ -36,7 +36,7 @@ public class NetherDrillRig extends WorkableElectricMultiblockMachine {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeTypes(GregERecipeTypes.NETHERDRILLRIGRECIPE)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT)
-            .appearanceBlock(GCYMBlocks.CASING_ATOMIC)
+            .appearanceBlock(GTBlocks.CASING_INVAR_HEATPROOF)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("aabaa", "accca", "accca", "accca", "cabac", "ccdcc", "ccdcc", "ccdcc", "ccccc", "ccccc")

@@ -220,7 +220,7 @@ public class FornaxUniversi extends WorkableElectricMultiblockMachine implements
             .multiblock("fornaxuniversi", FornaxUniversi::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GregERecipeTypes.FORNAX_UNIVERSI_ACCELERETION)
-            .appearanceBlock(GCYMBlocks.CASING_ATOMIC)
+            .appearanceBlock(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("             ", "             ", "             ", "             ", "             ", "             ", "             ", "             ", "C           C", "E           E", "C           C", "             ", "             ", "             ", "             ", "             ", "             ", "             ", "             ")

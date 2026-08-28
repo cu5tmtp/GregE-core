@@ -14,6 +14,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.content.Content;
 import com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredient;
 import com.gregtechceu.gtceu.common.data.GCYMBlocks;
+import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.lowdragmc.lowdraglib.syncdata.annotation.DescSynced;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.misc.PedestalPartMachine;
@@ -168,7 +169,7 @@ public class InfusionAltar extends WorkableElectricMultiblockMachine {
             .multiblock("infusion_altar", InfusionAltar::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GregERecipeTypes.INFUSION_ALTAR_INFUSING)
-            .appearanceBlock(GCYMBlocks.CASING_ATOMIC)
+            .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("aabbbbbaa", "aaaaaaaaa")

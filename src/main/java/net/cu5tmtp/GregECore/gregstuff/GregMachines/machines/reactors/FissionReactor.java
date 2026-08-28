@@ -13,6 +13,7 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.transfer.fluid.FluidHandlerList;
+import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.lowdragmc.lowdraglib.gui.texture.ResourceBorderTexture;
 import com.lowdragmc.lowdraglib.gui.widget.LabelWidget;
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
@@ -360,7 +361,7 @@ public class FissionReactor extends WorkableElectricMultiblockMachine {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GregERecipeTypes.FISSION_REACTION)
             .recipeModifier(GregEModifiers::fissionBoost)
-            .appearanceBlock(CASING_INVAR_HEATPROOF)
+            .appearanceBlock(CASING_TUNGSTENSTEEL_TURBINE)
             .pattern(definition -> {
                 return FactoryBlockPattern.start()
                         .aisle("ggggg", "accca", "accca", "accca", "accca", "accca", "accca", "accca", "accca", "hhhhh")

@@ -147,6 +147,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(DysonSwarmEnergyOutputPartMachine.DYSON_SWARM_EN_OUTPUT_MACHINE.getItem());
                         pOutput.accept(DysonSwarmEuclidEnergyOutputPartMachine.DYSON_SWARM_EN_OUTPUT_EUCLID_MACHINE.getItem());
                         pOutput.accept(EpicParallelControllHatch.EPIC_PARALLEL_HATCH.getItem());
+                        pOutput.accept(BloodStoragePartMachine.BLOOD_STORAGE_MACHINE.getItem());
 
                     })
                     .build());

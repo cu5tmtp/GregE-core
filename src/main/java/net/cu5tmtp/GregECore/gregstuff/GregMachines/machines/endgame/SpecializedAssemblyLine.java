@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMa
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
+import com.gregtechceu.gtceu.common.data.GCYMBlocks;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import net.cu5tmtp.GregECore.gregstuff.GregMachines.parts.threadParts.ThreadT3PartMachine;
@@ -67,7 +68,7 @@ public class SpecializedAssemblyLine extends WorkableElectricMultiblockMachine {
             .rotationState(RotationState.ALL)
             .recipeType(GregERecipeTypes.SPECIALIZEDASSEMBLYLINE)
             .recipeModifiers(GTRecipeModifiers.OC_PERFECT, GTRecipeModifiers.PARALLEL_HATCH)
-            .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+            .appearanceBlock(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("aabbaIabbaa", "abcccdcccba", "bccccdccccb", "bccccdccccb", "bccccdccccb", "abcccdcccba", "aabbaIabbaa")
                     .aisle("abaaaIaaaba", "beeeeeeeeeb", "ceeeeeeeeec", "ceeeedeeeec", "ceeeeeeeeec", "beeeeeeeeeb", "abaaaIaaaba")
